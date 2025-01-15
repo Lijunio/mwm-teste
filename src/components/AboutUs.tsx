@@ -5,10 +5,10 @@ const AboutUs: React.FC = () => {
   return (
     <Card
       sx={{
-        width: "100%", // Card ocupa toda a largura da página
-        backgroundColor: "rgba(255, 255, 255, 0.8)", // Fundo translúcido
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", // Sombra
-        margin: "20px auto", // Margem ao redor do card
+        width: "100%", 
+        backgroundColor: "rgba(255, 255, 255, 0.8)", 
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", 
+        margin: "20px auto",
       }}
     >
       <Box sx={{ color: "black", textAlign: "center", p: 4 }}>

@@ -14,7 +14,6 @@ const Contact: React.FC = () => {
         Contato
       </Typography>
       <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, mt: 4 }}>
-        {/* Telefone */}
         <Button
           startIcon={<PhoneIcon />}
           sx={{
@@ -28,7 +27,6 @@ const Contact: React.FC = () => {
           (31) 99150-2088
         </Button>
 
-        {/* WhatsApp */}
         <Button
           startIcon={<WhatsAppIcon />}
           href={whatsappLink}
