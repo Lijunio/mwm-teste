@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mwm-engenharia/static/css/main.383cea75.css",
+    "main.js": "/mwm-engenharia/static/js/main.ebc45279.js",
+    "index.html": "/mwm-engenharia/index.html",
+    "main.383cea75.css.map": "/mwm-engenharia/static/css/main.383cea75.css.map",
+    "main.ebc45279.js.map": "/mwm-engenharia/static/js/main.ebc45279.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.383cea75.css",
+    "static/js/main.ebc45279.js"
+  ]
+}
