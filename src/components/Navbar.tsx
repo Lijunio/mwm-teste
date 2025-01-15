@@ -21,9 +21,40 @@ const Navbar: React.FC = () => {
         >
           MWM Engenharia
         </Typography>
-        <Button sx={{ color: "#ffffff" }} href="#services">Serviços</Button>
-        <Button sx={{ color: "#ffffff" }} href="#about-us">Sobre Nós</Button>
-        <Button sx={{ color: "#ffffff" }} href="#contact">Contato</Button>
+        <Button
+  sx={{
+    color: "#ffffff",
+    fontSize: "18px", // Tamanho do texto aumentado
+    fontWeight: "bold", // Opcional: Deixa o texto em negrito
+    padding: "10px 20px", // Adiciona mais espaçamento interno para um botão maior
+  }}
+  href="#services"
+>
+  Serviços
+</Button>
+<Button
+  sx={{
+    color: "#ffffff",
+    fontSize: "18px", // Tamanho do texto aumentado
+    fontWeight: "bold", // Opcional: Deixa o texto em negrito
+    padding: "10px 20px", // Adiciona mais espaçamento interno para um botão maior
+  }}
+  href="#about-us"
+>
+  Sobre Nós
+</Button>
+<Button
+  sx={{
+    color: "#ffffff",
+    fontSize: "18px", // Tamanho do texto aumentado
+    fontWeight: "bold", // Opcional: Deixa o texto em negrito
+    padding: "10px 20px", // Adiciona mais espaçamento interno para um botão maior
+  }}
+  href="#contact"
+>
+  Contato
+</Button>
+
       </Toolbar>
     </AppBar>
   );

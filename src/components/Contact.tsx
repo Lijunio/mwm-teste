@@ -1,15 +1,50 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
+import { Typography, Box, Button } from "@mui/material";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
+import PhoneIcon from "@mui/icons-material/Phone";
 
 const Contact: React.FC = () => {
+  const whatsappLink = `https://wa.me/5531991502088?text=${encodeURIComponent(
+    "Olá! Estava visitando seu site e gostaria de saber mais sobre os serviços oferecidos pela MWM Engenharia para avaliar como podemos trabalhar juntos. Poderia me ajudar com mais informações?"
+  )}`;
+
   return (
-    <Box>
-      <Typography variant="h4" textAlign="center" gutterBottom>
+    <Box sx={{ color: "white", textAlign: "center", p: 4 }}>
+      <Typography variant="h4" gutterBottom>
         Contato
       </Typography>
-      <Typography textAlign="center">
-        Em breve adicionaremos mais informações de contato. Fique ligado!
-      </Typography>
+      <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, mt: 4 }}>
+        {/* Telefone */}
+        <Button
+          startIcon={<PhoneIcon />}
+          sx={{
+            color: "white",
+            border: "1px solid white",
+            borderRadius: 2,
+            padding: "10px 20px",
+            "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
+          }}
+        >
+          (31) 99150-2088
+        </Button>
+
+        {/* WhatsApp */}
+        <Button
+          startIcon={<WhatsAppIcon />}
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{
+            color: "white",
+            border: "1px solid white",
+            borderRadius: 2,
+            padding: "10px 20px",
+            "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
+          }}
+        >
+          Entre em contato pelo WhatsApp
+        </Button>
+      </Box>
     </Box>
   );
 };

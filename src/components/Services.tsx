@@ -160,21 +160,25 @@ const Services: React.FC = () => {
         },
     }}
   >
-      <Typography variant="h2" sx={{ fontSize: "2rem", fontWeight: "bold" }}>
-        O que é um Galpão de Lona e quais são seus usos e principais funções?
-      </Typography>
-    </AccordionSummary>
+<Box>
+    <Typography variant="h2" sx={{ fontSize: "2rem", fontWeight: "bold" }}>
+      O que é um Galpão de Lona e quais são seus usos e principais funções?
+    </Typography>
+    <Typography
+      paragraph
+      sx={{ fontSize: "1.5rem", marginTop: "20px", color: "white" }}
+    >
+      Um galpão de lona é uma estrutura temporária ou permanente composta por
+      uma base de armação metálica coberta com lona de alta resistência. Essa
+      lona é geralmente fabricada com materiais duráveis, como PVC ou
+      polietileno, que garantem proteção contra intempéries, como chuva, sol
+      intenso e ventos fortes.
+    </Typography>
+  </Box>
+</AccordionSummary>
+
+
     <AccordionDetails>
-      <Typography
-        paragraph
-        sx={{ fontSize: "1.5rem", marginBottom: "20px", marginTop: "20px", color: "white" }}
-      >
-        Um galpão de lona é uma estrutura temporária ou permanente composta por
-        uma base de armação metálica coberta com lona de alta resistência. Essa
-        lona é geralmente fabricada com materiais duráveis, como PVC ou
-        polietileno, que garantem proteção contra intempéries, como chuva, sol
-        intenso e ventos fortes.
-      </Typography>
 
       <Grid container spacing={2}>
         {/* Esquerdo */}
