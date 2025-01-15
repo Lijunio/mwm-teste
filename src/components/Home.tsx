@@ -40,21 +40,22 @@ const Home = () => {
   return (
     <Box sx={{ textAlign: "center", mt: 2, color: "white" }}>
       <Typography
-        variant="h2"
-        component="h1"
-        gutterBottom
-        sx={{
-          fontSize: { xs: "2rem", sm: "2.5rem" },
-          background: "linear-gradient(90deg, #c0c0c0, #ffffff, #c0c0c0)",
-          backgroundSize: "200% auto",
-          backgroundClip: "text",
-          textFillColor: "transparent",
-          animation: "shine 6s linear infinite",
-          fontWeight: "bold",
-        }}
-      >
-        Estruturas que fazem a diferença!
-      </Typography>
+  variant="h2"
+  component="h1"
+  gutterBottom
+  sx={{
+    fontSize: { xs: "1.5rem", sm: "3rem", md: "4rem" }, 
+    background: "linear-gradient(90deg, #c0c0c0, #ffffff, #c0c0c0)",
+    backgroundSize: "200% auto",
+    backgroundClip: "text",
+    textFillColor: "transparent",
+    animation: "shine 6s linear infinite",
+    fontWeight: "bold",
+  }}
+>
+  Estruturas que fazem a diferença!
+</Typography>
+
 
       <Typography
         variant="h6"

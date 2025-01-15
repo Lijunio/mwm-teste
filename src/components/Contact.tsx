@@ -24,7 +24,7 @@ const Contact: React.FC = () => {
             "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
           }}
         >
-          (31) 99150-2088
+          (31) 99150-2088 - Wallace
         </Button>
 
         <Button
