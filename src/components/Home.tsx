@@ -3,25 +3,25 @@ import { Box, Typography, Grid, Card, CardMedia } from "@mui/material";
 
 const Home = () => {
   const images = [
-    "/imagens/1.jpg",
-    "/imagens/2.png",
-    "/imagens/3.jpeg",
-    "/imagens/4.jpeg",
-    "/imagens/5.jpeg",
-    "/imagens/6.jpeg",
-    "/imagens/7.jpeg",
-    "/imagens/8.jpeg",
-    "/imagens/9.jpeg",
-    "/imagens/10.jpeg",
-    "/imagens/11.jpeg",
-    "/imagens/12.jpg",
-    "/imagens/13.png",
-    "/imagens/15.jpg",
-    "/imagens/16.png",
-    "/imagens/17.jpeg",
-    "/imagens/18.jpg",
-    "/imagens/19.jpeg",
-    "/imagens/20.jpg",
+    `${process.env.PUBLIC_URL}/imagens/1.jpg`,
+    `${process.env.PUBLIC_URL}/imagens/2.png`,
+    `${process.env.PUBLIC_URL}/imagens/3.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/4.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/5.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/6.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/7.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/8.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/9.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/10.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/11.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/12.jpg`,
+    `${process.env.PUBLIC_URL}/imagens/13.png`,
+    `${process.env.PUBLIC_URL}/imagens/15.jpg`,
+    `${process.env.PUBLIC_URL}/imagens/16.png`,
+    `${process.env.PUBLIC_URL}/imagens/17.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/18.jpg`,
+    `${process.env.PUBLIC_URL}/imagens/19.jpeg`,
+    `${process.env.PUBLIC_URL}/imagens/20.jpg`,
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,7 +51,6 @@ const Home = () => {
         Estruturas que fazem a diferença!
       </Typography>
 
-      {/* Texto adicional */}
       <Typography variant="h6" component="p" textAlign="justify" sx={{ mb: 4 }}>
         Na <strong>MWM Engenharia</strong>, somos especialistas em{" "}
         <strong>galpões lonados</strong> e <strong>tendas de alta qualidade</strong> para eventos, obras e
@@ -60,7 +59,6 @@ const Home = () => {
         <strong>Transforme seu espaço com quem entende do assunto!</strong>
       </Typography>
 
-      {/* Imagens em Grid */}
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <Card>
@@ -84,7 +82,6 @@ const Home = () => {
         </Grid>
       </Grid>
 
-      {/* Estilo para a animação */}
       <style>
         {`
           @keyframes shine {
