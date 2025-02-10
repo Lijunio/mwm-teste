@@ -155,19 +155,33 @@ const Services: React.FC = () => {
     />
   }
   sx={{
-    backgroundImage:
-      "linear-gradient(270deg, rgb(161, 161, 175), rgba(0, 0, 51, 0.5), rgba(0, 0, 51, 0))",
+    backgroundImage: "linear-gradient(270deg, rgb(44, 50, 56), rgba(171, 118, 33), rgb(44, 50, 56))",
     backgroundSize: "200% 100%",
     backgroundPosition: "0% 0%",
-    animation: "gradientShift 6s linear infinite",
-    color: "#ffffff",
+    animation: "gradientShift 10s linear infinite",  // A animação agora dura 10 segundos
+    color: "#000000",  // Cor do texto mantida como padrão (preta)
     fontSize: "0.9rem",
     minHeight: "40px",
     "& .MuiAccordionSummary-content": {
       margin: "0px",
-      flexDirection: "column", 
+      flexDirection: "column",
+    },
+    "@keyframes gradientShift": {
+      "0%": {
+        backgroundPosition: "0% 0%",  // Início com a cor rgb(44, 50, 56)
+      },
+      "50%": {
+        backgroundPosition: "100% 0%",  // Meio da animação com fundo em rgba(171, 118, 33)
+      },
+      "100%": {
+        backgroundPosition: "0% 0%",  // Final da animação com o fundo totalmente em rgba(171, 118, 33)
+      },
     },
   }}
+  
+  
+  
+  
 >
   <Typography
     variant="h2"
@@ -175,6 +189,7 @@ const Services: React.FC = () => {
       fontSize: { xs: "1.5rem", sm: "2rem" },
       fontWeight: "bold",
       marginBottom: { sm: "20px" }, 
+      color: "white",
     }}
   >
     O que é um Galpão de Lona e quais são seus usos e principais funções?

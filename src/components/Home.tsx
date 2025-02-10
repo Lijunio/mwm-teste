@@ -1,128 +1,183 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Grid, Card, CardMedia, useMediaQuery } from "@mui/material";
+import { Box, Typography, Card, CardContent, Grid, useMediaQuery, Button } from "@mui/material"; 
 import { useTheme } from "@mui/material/styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
 const Home = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "md"));
 
+  const [visibleText, setVisibleText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const text = "ESTRUTURAS E MONTAGENS";
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
-    `${process.env.PUBLIC_URL}/imagens/1.jpg`,
-    `${process.env.PUBLIC_URL}/imagens/2.png`,
-    `${process.env.PUBLIC_URL}/imagens/3.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/4.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/5.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/6.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/7.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/8.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/9.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/10.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/11.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/12.jpg`,
-    `${process.env.PUBLIC_URL}/imagens/13.png`,
-    `${process.env.PUBLIC_URL}/imagens/15.jpg`,
-    `${process.env.PUBLIC_URL}/imagens/16.png`,
-    `${process.env.PUBLIC_URL}/imagens/17.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/18.jpg`,
-    `${process.env.PUBLIC_URL}/imagens/19.jpeg`,
-    `${process.env.PUBLIC_URL}/imagens/20.jpg`,
+    `${process.env.PUBLIC_URL}/imagens/home/pag1.png`,
+    `${process.env.PUBLIC_URL}/imagens/home/pag2.png`,
+    `${process.env.PUBLIC_URL}/imagens/home/pag3.png`,
+    `${process.env.PUBLIC_URL}/imagens/home/pag4.png`,
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (textIndex < text.length) {
+      timeout = setTimeout(() => {
+        setVisibleText((prev) => prev + text[textIndex]);
+        setTextIndex(textIndex + 1);
+      }, 200);
+    } else {
+      timeout = setTimeout(() => {
+        setVisibleText("");
+        setTextIndex(0);
+      }, 5000);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [textIndex, visibleText]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    const imageInterval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(imageInterval);
   }, [images.length]);
 
   return (
     <Box sx={{ textAlign: "center", mt: 2, color: "white" }}>
-      <Typography
-  variant="h2"
-  component="h1"
-  gutterBottom
-  sx={{
-    fontSize: { xs: "1.5rem", sm: "3rem", md: "4rem" }, 
-    background: "linear-gradient(90deg, #c0c0c0, #ffffff, #c0c0c0)",
-    backgroundSize: "200% auto",
-    backgroundClip: "text",
-    textFillColor: "transparent",
-    animation: "shine 6s linear infinite",
-    fontWeight: "bold",
-  }}
->
-  Estruturas que fazem a diferença!
-</Typography>
+      {isSmallScreen && (
+        <Box sx={{ mb: 2 }}>
+          <img
+            src={`${process.env.PUBLIC_URL}/imagens/logo.png`}
+            alt="Logo"
+            style={{ width: "250px", height: "auto" }}
+          />
+          <Typography
+            variant="h6"
+            component="p"
+            sx={{
+              mt: 1,
+              fontSize: "1.5rem",
+              fontWeight: "bold",
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              textAlign: "center",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {visibleText}
+          </Typography>
+        </Box>
+      )}
 
-
-      <Typography
-        variant="h6"
-        component="p"
+      <Grid
+        container
+        spacing={2}
         sx={{
-          fontSize: { xs: "0.9rem", sm: "1.2rem" },
-          textAlign: { xs: "left", sm: "justify" },
-          mb: 4,
+          mt: 4,
+          flexDirection: isSmallScreen ? "column" : "row",
         }}
       >
-        Na <strong>MWM Engenharia</strong>, somos especialistas em{" "}
-        <strong>galpões lonados</strong> e <strong>tendas de alta qualidade</strong> para eventos, obras e
-        armazenamento. Combinamos <strong>design funcional</strong>,{" "}
-        <strong>durabilidade</strong> e <strong>excelência</strong> para atender todas as suas necessidades.{" "}
-        <strong>Transforme seu espaço com quem entende do assunto!</strong>
-      </Typography>
+        <Grid item xs={12} md={6} order={isSmallScreen ? 1 : 2} sx={{ height: isMediumScreen ? "auto" : "100%" }}>
+        <Card
+  sx={{
+    bgcolor: "transparent",
+    color: "white",
+    textAlign: "center",
+    padding: "16px",
+    height: isSmallScreen ? "auto" : "550px", 
+    width: isSmallScreen ? "100%" : "auto",  
+    border: "none",
+  }}
+>
+  <CardContent>
+    <Typography
+      variant="h4"
+      sx={{
+        fontWeight: "bold",
+        fontSize: "2rem",
+        textAlign: "left",
+        color: "white",
+        marginTop: isSmallScreen ? "0" : "50px", 
+      }}
+    >
+      Na MWM Engenharia, somos especialistas em
+    </Typography>
+  </CardContent>
 
-      <Grid container spacing={2}>
-        {isSmallScreen ? (
-          <Grid item xs={12}>
-            <Card>
-              <CardMedia
-                component="img"
-                height="300"
-                image={images[currentIndex]}
-                alt={`Imagem ${currentIndex + 1}`}
-              />
-            </Card>
-          </Grid>
-        ) : (
-          <>
-            <Grid item xs={6}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  height="600"
-                  image={images[currentIndex]}
-                  alt={`Imagem ${currentIndex + 1}`}
-                />
-              </Card>
-            </Grid>
-            <Grid item xs={6}>
-              <Card>
-                <CardMedia
-                  component="img"
-                  height="600"
-                  image={images[(currentIndex + 1) % images.length]}
-                  alt={`Imagem ${(currentIndex + 2) % images.length}`}
-                />
-              </Card>
-            </Grid>
-          </>
-        )}
+  <Typography
+    variant="h6"
+    component="p"
+    sx={{
+      mt: isSmallScreen ? 2 : 4, 
+      fontSize: "1.6rem",
+      textAlign: "left",
+      color: "white",
+    }}
+  >
+    Fabricação, venda e locação mensal de:
+  </Typography>
+
+  <Box sx={{ mt: 3, textAlign: "left", maxWidth: "600px", margin: "0 auto" }}>
+    <ul style={{ listStyleType: "none", padding: 0 }}>
+      <li style={{ fontSize: "1.4rem", marginBottom: "10px", color: "white" }}>
+        <FontAwesomeIcon icon={faCaretRight} style={{ marginRight: "10px" }} />
+        Galpão Lonado e com Telhas de Zinco
+      </li>
+      <li style={{ fontSize: "1.4rem", marginBottom: "10px", color: "white" }}>
+        <FontAwesomeIcon icon={faCaretRight} style={{ marginRight: "10px" }} />
+        Galpão Pré-Moldado, Pré-Fabricado e Industrial
+      </li>
+      <li style={{ fontSize: "1.4rem", marginBottom: "10px", color: "white" }}>
+        <FontAwesomeIcon icon={faCaretRight} style={{ marginRight: "10px" }} />
+        Tenda para Obras
+      </li>
+      <li style={{ fontSize: "1.4rem", marginBottom: "10px", color: "white" }}>
+        <FontAwesomeIcon icon={faCaretRight} style={{ marginRight: "10px" }} />
+        Tenda Carpa
+      </li>
+    </ul>
+  </Box>
+
+  <Button
+  variant="contained"
+  sx={{
+    mt: 3,
+    bgcolor: "#688198",
+    color: "white",
+    width: "100%",
+    fontSize: isSmallScreen ? "1rem" : "1.3rem",
+    padding: isSmallScreen ? "8px" : "12px",
+    background: "linear-gradient(to right,rgb(44, 50, 56),rgb(48, 54, 59))"
+  }}
+  onClick={() => {
+    window.open(
+      "https://wa.me/5531991502088?text=" + encodeURIComponent("Olá! Estive olhando seu site e gostaria de solicitar um orçamento."),
+      "_blank"
+    );
+  }}
+>
+  ORÇAMENTO
+</Button>
+
+</Card>
+
+        </Grid>
+
+        <Grid item xs={12} md={6} order={isSmallScreen ? 2 : 1} sx={{ height: isSmallScreen ? "auto" : "100%" }}>
+          <Card sx={{ bgcolor: "transparent", color: "white", textAlign: "center", display: "inline-block", padding: 0 }}>
+            <img
+              src={images[currentImageIndex]}
+              alt={`Image ${currentImageIndex}`}
+              style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }}
+            />
+          </Card>
+        </Grid>
       </Grid>
-
-      <style>
-        {`
-          @keyframes shine {
-            0% {
-              background-position: 0% center;
-            }
-            100% {
-              background-position: 200% center;
-            }
-          }
-        `}
-      </style>
     </Box>
   );
 };

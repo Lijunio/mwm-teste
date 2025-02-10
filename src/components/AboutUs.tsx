@@ -50,8 +50,8 @@ const AboutUs: React.FC = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                height: { xs: 100, sm: 150 }, // Altura responsiva
-                width: { xs: "100%", sm: "90%", md: "100%" }, // Largura responsiva
+                height: { xs: 100, sm: 150 },
+                width: { xs: "100%", sm: "90%", md: "100%" },
                 border: "2px solid white",
                 borderRadius: 2,
                 transition: "all 0.3s ease",
@@ -82,8 +82,8 @@ const AboutUs: React.FC = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                height: { xs: 100, sm: 150 }, // Altura responsiva
-                width: { xs: "100%", sm: "90%", md: "100%" }, // Largura responsiva
+                height: { xs: 100, sm: 150 }, 
+                width: { xs: "100%", sm: "90%", md: "100%" }, 
                 border: "2px solid white",
                 borderRadius: 2,
                 transition: "all 0.3s ease",

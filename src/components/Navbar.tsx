@@ -1,74 +1,96 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import { AppBar, Toolbar, Box, Button } from "@mui/material";
 
 const Navbar: React.FC = () => {
   return (
-    <AppBar
-      position="static"
-      sx={{
-        backgroundColor: "transparent",
-        boxShadow: "none",
-      }}
-    >
-      <Toolbar
+    <>
+      {/* Menu fixo com borda e fundo */}
+      <AppBar
+        position="fixed"
         sx={{
-          flexDirection: "row",
-          justifyContent: { xs: "center", sm: "space-between" },
-          alignItems: "center",
-          flexWrap: "nowrap",
+          backgroundColor: "rgb(44, 50, 56)", // Cor de fundo do menu
+          boxShadow: "none",
+          width: "100%",
+          top: 0,
+          zIndex: 9999,
+          padding: "10px 0",
+          borderBottom: "4px solid #688198", // Borda com a cor desejada
         }}
       >
-        <Typography
-          variant="h4"
+        <Toolbar
           sx={{
-            display: { xs: "none", sm: "block" },
-            color: "#ffffff",
-            fontWeight: "bold",
-          }}
-        >
-          MWM Engenharia
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
             flexDirection: "row",
-            gap: 2,
             justifyContent: "center",
+            alignItems: "center",
+            flexWrap: "nowrap",
           }}
         >
-          <Button
+          {/* Menu com animação */}
+          <Box
             sx={{
-              color: "#ffffff",
-              fontSize: "16px",
-              fontWeight: "bold",
+              display: "flex",
+              gap: 4,
+              justifyContent: "center",
+              width: "100%",
+              position: "relative",
+              zIndex: 1000,
+              transition: "transform 0.3s ease",
+              "&:hover": {
+                transform: "scale(1.05)",
+              },
             }}
-            href="#services"
           >
-            Serviços
-          </Button>
-          <Button
-            sx={{
-              color: "#ffffff",
-              fontSize: "16px",
-              fontWeight: "bold",
-            }}
-            href="#about-us"
-          >
-            Sobre Nós
-          </Button>
-          <Button
-            sx={{
-              color: "#ffffff",
-              fontSize: "16px",
-              fontWeight: "bold",
-            }}
-            href="#contact"
-          >
-            Contato
-          </Button>
-        </Box>
-      </Toolbar>
-    </AppBar>
+            <Button
+              sx={{
+                color: "#ffffff",
+                fontSize: "18px",
+                fontWeight: "bold",
+                transition: "color 0.3s ease",
+                "&:hover": {
+                  color: "#688198",
+                },
+              }}
+              href="#services"
+            >
+              Serviços
+            </Button>
+            <Button
+              sx={{
+                color: "#ffffff",
+                fontSize: "18px",
+                fontWeight: "bold",
+                transition: "color 0.3s ease",
+                "&:hover": {
+                  color: "#688198",
+                },
+              }}
+              href="#about-us"
+            >
+              Sobre Nós
+            </Button>
+            <Button
+              sx={{
+                color: "#ffffff",
+                fontSize: "18px",
+                fontWeight: "bold",
+                transition: "color 0.3s ease",
+                "&:hover": {
+                  color: "#688198",
+                },
+              }}
+              href="#contact"
+            >
+              Contato
+            </Button>
+          </Box>
+        </Toolbar>
+      </AppBar>
+
+      {/* Conteúdo da página abaixo do menu */}
+      <Box sx={{ marginTop: "100px", padding: "20px" }}>
+        {/* Coloque aqui o restante do conteúdo da página */}
+      </Box>
+    </>
   );
 };
 
