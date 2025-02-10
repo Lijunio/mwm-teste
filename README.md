@@ -21,9 +21,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ### `Git Hub`
 
-NPM RUN BUILD
-NPM RUN DEPLOY
-GIT ADD . 
+npm run build
+npm run deploy
+git add .
 git commit -m "alterações"
 git push origin main
 

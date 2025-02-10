@@ -1,114 +1,176 @@
 import React from "react";
-import { Typography, Box, Grid, Card } from "@mui/material";
+import { Box, Card, Typography, Button, Grid } from "@mui/material";
 
 const AboutUs: React.FC = () => {
+  const handleBudgetRequest = (title: string) => {
+    const message = `Olá! Estive analisando o seu site e tenho uma dúvida em relação a ${title}.`;
+    window.open(
+      `https://wa.me/5531991502088?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  };
+
   return (
-    <Card
-      sx={{
-        width: { xs: "90%", md: "100%" }, 
-        backgroundColor: "rgba(255, 255, 255, 0.8)", 
-        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)", 
-        margin: "20px auto",
-      }}
-    >
-      <Box sx={{ color: "black", textAlign: "center", p: { xs: 2, sm: 4 } }}>
-        <Typography
-          variant="h2"
-          gutterBottom
-          sx={{
-            color: "#003366",
-            fontSize: { xs: "1.8rem", sm: "2rem", md: "2.5rem" }, 
-          }}
-        >
-          Sobre Nós
-        </Typography>
-        <Typography
-          variant="h6"
-          textAlign="justify"
-          gutterBottom
-          sx={{
-            fontSize: { xs: "1rem", sm: "1rem", md: "1.2rem" }, 
-          }}
-        >
-          A MWM Engenharia busca oferecer soluções completas com excelência,
-          dedicando-se ao sucesso de cada projeto. Nosso compromisso com os
-          clientes garante a entrega de qualidade e inovação em serviços de
-          engenharia.
-        </Typography>
-
-        <Grid 
-          container 
-          spacing={4} 
-          justifyContent="center" 
-          alignItems="center" 
-          sx={{ mt: 4 }}
-        >
-          <Grid item xs={12} sm={6} md={4}>
-            <Box
+    <Box sx={{ p: 4, fontFamily: "'Roboto', sans-serif" }}>
+      <Grid container spacing={4} justifyContent="center">
+        <Grid item xs={12} sm={6} md={6}>
+          <Card
+            sx={{
+              padding: 3,
+              boxShadow: 3,
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              height: "100%",
+              borderRadius: 4,
+              background: "linear-gradient(to bottom, rgb(44, 50, 56), rgb(171, 118, 33))",
+              color: "white",
+            }}
+          >
+            <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
+              Galpão Lonado e Zinco
+            </Typography>
+            <Typography sx={{ mb: 3 }}>
+              Coberturas feitas com estrutura de aço carbono e alumínio, usando lonas resistentes ou telhas galvanizadas.
+              Oferecem redução de custos, montagem personalizada e atendem várias necessidades, como obras, oficinas e armazenagem.
+            </Typography>
+            <Button
+              variant="contained"
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                height: { xs: 100, sm: 150 },
-                width: { xs: "100%", sm: "90%", md: "100%" },
-                border: "2px solid white",
-                borderRadius: 2,
-                transition: "all 0.3s ease",
+                backgroundColor: "rgb(44, 50, 56)",
+                color: "#ffffff",
+                fontWeight: "bold",
                 "&:hover": {
-                  backgroundColor: "white",
-                  color: "#003366",
-                  transform: "scale(1.1)",
+                  backgroundColor: "#688198",
+                  color: "#ffffff",
                 },
               }}
+              onClick={() => handleBudgetRequest("Galpão Lonado e Zinco")}
             >
-              <Typography
-                variant="h4"
-                fontWeight="bold"
-                sx={{
-                  fontSize: { xs: "1.5rem", sm: "1.5rem" }, 
-                  textAlign: "center", 
-                }}
-              >
-                +2 anos no mercado
-              </Typography>
-            </Box>
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={4}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                height: { xs: 100, sm: 150 }, 
-                width: { xs: "100%", sm: "90%", md: "100%" }, 
-                border: "2px solid white",
-                borderRadius: 2,
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  backgroundColor: "white",
-                  color: "#003366",
-                  transform: "scale(1.1)",
-                },
-              }}
-            >
-              <Typography
-                variant="h4"
-                fontWeight="bold"
-                sx={{
-                  fontSize: { xs: "1.5rem", sm: "1.5rem" }, 
-                  textAlign: "center", 
-                }}
-              >
-                +5 empresas atendidas
-              </Typography>
-            </Box>
-          </Grid>
+              Orçamento
+            </Button>
+          </Card>
         </Grid>
-      </Box>
-    </Card>
+
+        <Grid item xs={12} sm={6} md={6}>
+          <Card
+            sx={{
+              padding: 3,
+              boxShadow: 3,
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              height: "100%",
+              borderRadius: 4,
+              background: "linear-gradient(to bottom, rgb(44, 50, 56), rgb(171, 118, 33))",
+              color: "white",
+            }}
+          >
+            <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
+              Galpão c/ Portão e Janela
+            </Typography>
+            <Typography sx={{ mb: 3 }}>
+              Estrutura robusta com pé-direito de 3 a 6 metros. Venda ou locação mensal, com módulos ajustáveis. Usada em controle de acesso, armazenagem, refeitórios, vestuários e áreas de vivência. Consulte condições.
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "rgb(44, 50, 56)",
+                color: "#ffffff",
+                fontWeight: "bold",
+                "&:hover": {
+                  backgroundColor: "#688198",
+                  color: "#ffffff",
+                },
+              }}
+              onClick={() => handleBudgetRequest("Galpão c/ Portão e Janela")}
+            >
+              Orçamento
+            </Button>
+          </Card>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={6}>
+          <Card
+            sx={{
+              padding: 3,
+              boxShadow: 3,
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              height: "100%",
+              borderRadius: 4,
+              background: "linear-gradient(to bottom, rgb(44, 50, 56), rgb(171, 118, 33))",
+              color: "white",
+            }}
+          >
+            <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
+              Tenda Carpa
+            </Typography>
+            <Typography sx={{ mb: 3 }}>
+              Design moderno em alumínio e aço carbono, com segurança e flexibilidade. Ideal para escritórios, refeitórios, vestuários, armazenagem e outros. Solução personalizada para demandas em todo o Brasil.
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "rgb(44, 50, 56)",
+                color: "#ffffff",
+                fontWeight: "bold",
+                "&:hover": {
+                  backgroundColor: "#688198",
+                  color: "#ffffff",
+                },
+              }}
+              onClick={() => handleBudgetRequest("Tenda Carpa")}
+            >
+              Orçamento
+            </Button>
+          </Card>
+        </Grid>
+
+        <Grid item xs={12} sm={6} md={6}>
+          <Card
+            sx={{
+              padding: 3,
+              boxShadow: 3,
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              height: "100%",
+              borderRadius: 4,
+              background: "linear-gradient(to bottom, rgb(44, 50, 56), rgb(171, 118, 33))",
+              color: "white",
+            }}
+          >
+            <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
+              Lonas Sob Medida
+            </Typography>
+            <Typography sx={{ mb: 3 }}>
+              Produzimos lonas sob medida, com alta qualidade e garantia. Atendemos diversas necessidades e trabalhamos com as melhores marcas do mercado, sempre priorizando a durabilidade.
+            </Typography>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "rgb(44, 50, 56)",
+                color: "#ffffff",
+                fontWeight: "bold",
+                "&:hover": {
+                  backgroundColor: "#688198",
+                  color: "#ffffff",
+                },
+              }}
+              onClick={() => handleBudgetRequest("Lonas Sob Medida")}
+            >
+              Orçamento
+            </Button>
+          </Card>
+        </Grid>
+      </Grid>
+    </Box>
   );
 };
 

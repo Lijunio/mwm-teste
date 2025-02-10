@@ -4,17 +4,15 @@ import { AppBar, Toolbar, Box, Button } from "@mui/material";
 const Navbar: React.FC = () => {
   return (
     <>
-      {/* Menu fixo com borda e fundo */}
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: "rgb(44, 50, 56)", // Cor de fundo do menu
+          backgroundColor: "rgb(44, 50, 56)", 
           boxShadow: "none",
           width: "100%",
           top: 0,
           zIndex: 9999,
           padding: "10px 0",
-          borderBottom: "4px solid #688198", // Borda com a cor desejada
         }}
       >
         <Toolbar
@@ -25,7 +23,6 @@ const Navbar: React.FC = () => {
             flexWrap: "nowrap",
           }}
         >
-          {/* Menu com animação */}
           <Box
             sx={{
               display: "flex",
@@ -42,12 +39,14 @@ const Navbar: React.FC = () => {
           >
             <Button
               sx={{
+                backgroundColor: "rgb(44, 50, 56)",
                 color: "#ffffff",
                 fontSize: "18px",
                 fontWeight: "bold",
                 transition: "color 0.3s ease",
                 "&:hover": {
-                  color: "#688198",
+                  backgroundColor: "#688198",
+                  color: "#ffffff",
                 },
               }}
               href="#services"
@@ -56,12 +55,14 @@ const Navbar: React.FC = () => {
             </Button>
             <Button
               sx={{
+                backgroundColor: "rgb(44, 50, 56)",
                 color: "#ffffff",
                 fontSize: "18px",
                 fontWeight: "bold",
                 transition: "color 0.3s ease",
                 "&:hover": {
-                  color: "#688198",
+                  backgroundColor: "#688198",
+                  color: "#ffffff",
                 },
               }}
               href="#about-us"
@@ -70,12 +71,14 @@ const Navbar: React.FC = () => {
             </Button>
             <Button
               sx={{
+                backgroundColor: "rgb(44, 50, 56)",
                 color: "#ffffff",
                 fontSize: "18px",
                 fontWeight: "bold",
                 transition: "color 0.3s ease",
                 "&:hover": {
-                  color: "#688198",
+                  backgroundColor: "#688198",
+                  color: "#ffffff",
                 },
               }}
               href="#contact"
@@ -86,9 +89,7 @@ const Navbar: React.FC = () => {
         </Toolbar>
       </AppBar>
 
-      {/* Conteúdo da página abaixo do menu */}
       <Box sx={{ marginTop: "100px", padding: "20px" }}>
-        {/* Coloque aqui o restante do conteúdo da página */}
       </Box>
     </>
   );

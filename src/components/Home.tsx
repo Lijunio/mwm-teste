@@ -95,6 +95,7 @@ const Home = () => {
   }}
 >
   <CardContent>
+
     <Typography
       variant="h4"
       sx={{
@@ -102,10 +103,10 @@ const Home = () => {
         fontSize: "2rem",
         textAlign: "left",
         color: "white",
-        marginTop: isSmallScreen ? "0" : "50px", 
+        marginTop: isSmallScreen ? "0" : "20px", 
       }}
     >
-      Na MWM Engenharia, somos especialistas em
+      Há mais de 2 anos no mercado. Na MWM Engenharia, somos especialistas em
     </Typography>
   </CardContent>
 
