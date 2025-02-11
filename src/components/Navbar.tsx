@@ -1,18 +1,23 @@
 import React from "react";
-import { AppBar, Toolbar, Box, Button } from "@mui/material";
+import { AppBar, Toolbar, Box, Button, useMediaQuery } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 const Navbar: React.FC = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md")); // Verifica se a tela é grande
+
   return (
     <>
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: "rgb(44, 50, 56)", 
+          backgroundColor: "rgba(34, 43, 50, 0.4)", 
           boxShadow: "none",
           width: "100%",
           top: 0,
           zIndex: 9999,
           padding: "10px 0",
+          backdropFilter: "blur(5px)", 
         }}
       >
         <Toolbar
@@ -26,7 +31,7 @@ const Navbar: React.FC = () => {
           <Box
             sx={{
               display: "flex",
-              gap: 4,
+              gap: isLargeScreen ? 8 : 4, // telas grandes
               justifyContent: "center",
               width: "100%",
               position: "relative",
@@ -39,7 +44,7 @@ const Navbar: React.FC = () => {
           >
             <Button
               sx={{
-                backgroundColor: "rgb(44, 50, 56)",
+                backgroundColor: "transparent",
                 color: "#ffffff",
                 fontSize: "18px",
                 fontWeight: "bold",
@@ -55,7 +60,7 @@ const Navbar: React.FC = () => {
             </Button>
             <Button
               sx={{
-                backgroundColor: "rgb(44, 50, 56)",
+                backgroundColor: "transparent",
                 color: "#ffffff",
                 fontSize: "18px",
                 fontWeight: "bold",
@@ -71,7 +76,7 @@ const Navbar: React.FC = () => {
             </Button>
             <Button
               sx={{
-                backgroundColor: "rgb(44, 50, 56)",
+                backgroundColor: "transparent",
                 color: "#ffffff",
                 fontSize: "18px",
                 fontWeight: "bold",
@@ -89,8 +94,7 @@ const Navbar: React.FC = () => {
         </Toolbar>
       </AppBar>
 
-      <Box sx={{ marginTop: "100px", padding: "20px" }}>
-      </Box>
+      <Box sx={{ marginTop: "100px", padding: "20px" }} />
     </>
   );
 };

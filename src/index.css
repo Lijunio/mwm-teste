@@ -13,14 +13,12 @@ code {
     monospace;
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 100% 0%; /* Começa da direita */
-  }
-  50% {
-    background-position: 50% 0%; /* Meio */
-  }
-  100% {
-    background-position: 0% 0%; /* Termina na esquerda */
-  }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
 }

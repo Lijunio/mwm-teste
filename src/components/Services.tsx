@@ -1,7 +1,9 @@
 import React from "react";
-import { Box, Card, CardContent, Typography, IconButton, CardMedia } from "@mui/material";
+import { Box, Card, CardContent, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { Carousel } from "react-responsive-carousel"; // Importando o carrossel
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Estilos do carrossel
 
 const Services: React.FC = () => {
   return (
@@ -11,12 +13,12 @@ const Services: React.FC = () => {
         flexWrap: "wrap",
         justifyContent: "center",
         padding: "40px",
-         background: "linear-gradient(to right,rgb(171, 118, 33),rgb(128, 95, 41))"
+        background: "linear-gradient(90deg, #254b3a 75%, #000000 100%) "
       }}
     >
-      {/* Coluna da esquerda com dois cards */}
+      {/* imagens */}
       <Box
-        sx={{ 
+        sx={{
           display: "flex",
           flexDirection: "column",
           maxWidth: { xs: "500px", md: "600px" },
@@ -24,56 +26,114 @@ const Services: React.FC = () => {
           marginRight: "20px",
         }}
       >
-        {/* Primeiro Card - Locação Simples */}
-        <Card
-          sx={{
-            padding: "20px",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
-            background: "transparent",
-            color: "#fff",
-            width: { xs: "100%", md: "600px" },
-            height: { md: "500px" },
-          }}
-        >
-          <CardContent>
-            <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", sm: "2rem" } }}>
-              Locação Simples
-            </Typography>
-            <Typography variant="body1" paragraph sx={{ lineHeight: 1.8, fontSize: { xs: "1rem", sm: "1.2rem" } }}>
-              Sua equipe já está mobilizada em campo? Reduza custos e tempo de montagem com a Locação Simples!
-            </Typography>
-            <Typography variant="body1" paragraph sx={{ fontSize: { xs: "1rem", sm: "1.2rem" } }}>
-              A solução ideal para quando o cliente já possui equipe no local. Com a Locação Simples, combinamos economia e agilidade para otimizar sua operação.
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "20px" }}>
-  {["Eficiência", "Economia", "Agilidade"].map((item) => (
-    <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-      <FontAwesomeIcon icon={faPlus} size="lg" color="#fff" /> {/* Ícone branco */}
-      <Typography variant="body1" sx={{ fontSize: "1.6rem", fontWeight: "bold"}}> {/* Texto com nova cor */}
-        {item}
-      </Typography>
-    </Box>
-  ))}
-</Box>
-          </CardContent>
-        </Card>
-
-        {/* Segundo Card - Imagem */}
         <Card
           sx={{
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
             backgroundColor: "transparent",
             width: { xs: "100%", md: "600px" },
-            height: { md: "500px" }, 
+            height: { md: "500px" },
           }}
         >
-          <CardMedia
-            component="img"
-            image={`${process.env.PUBLIC_URL}/imagens/21.jpg`}
-            alt="Imagem ilustrativa"
-            sx={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "10px" }}
-          />
+          <Carousel 
+            autoPlay
+            infiniteLoop
+            showThumbs={false}
+            showStatus={false}
+            dynamicHeight={false}
+            interval={3000}
+          >
+            <div>
+              <img
+                src={`${process.env.PUBLIC_URL}/imagens/21.jpg`}
+                alt="Imagem 1"
+                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
+              />
+            </div>
+            <div>
+              <img
+                src={`${process.env.PUBLIC_URL}/imagens/home/pag2.png`}
+                alt="Imagem 3"
+                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
+              />
+            </div>
+            <div>
+              <img
+                src={`${process.env.PUBLIC_URL}/imagens/home/pag3.png`}
+                alt="Imagem 4"
+                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
+              />
+            </div>
+            <div>
+              <img
+                src={`${process.env.PUBLIC_URL}/imagens/home/pag4.png`}
+                alt="Imagem 5"
+                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
+              />
+            </div>
+          </Carousel>
         </Card>
+
+        {/*Locação simples */}
+        <Card
+  sx={{
+    padding: "20px",
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
+    background: "transparent",
+    color: "#fff",
+    width: { xs: "100%", md: "600px" },
+    height: { md: "500px" },
+    display: "flex", 
+    flexDirection: "column", 
+    justifyContent: "center", 
+    alignItems: "flex-start", 
+  }}
+>
+  <CardContent>
+    <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, gap: "20px" }}>
+      {/* Coluna da esquerda - 70% */}
+      <Box sx={{ flex: { xs: "1", md: "7" } }}>
+        <Typography
+          variant="h4"
+          gutterBottom
+          sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", sm: "2rem" } }}
+        >
+          Locação Simples
+        </Typography>
+        <Typography
+          variant="body1"
+          paragraph
+          sx={{ lineHeight: 1.8, fontSize: { xs: "1rem", sm: "1.2rem" } }}
+        >
+          Sua equipe já está mobilizada em campo? Reduza custos e tempo de montagem com a Locação Simples!
+        </Typography>
+        <Typography
+          variant="body1"
+          paragraph
+          sx={{ fontSize: { xs: "1rem", sm: "1.2rem" } }}
+        >
+          A solução ideal para quando o cliente já possui equipe no local.
+        </Typography>
+      </Box>
+
+      {/* Coluna da direita - 30% */}
+<Box sx={{ flex: { xs: "1", md: "3" } }}>
+  <Box sx={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "20px" }}>
+    {["Eficiência", "Economia", "Agilidade"].map((item) => (
+      <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <FontAwesomeIcon icon={faPlus} size="2x" color="rgb(171, 118, 33)" /> {/* Ícone maior e com a nova cor */}
+        <Typography variant="body1" sx={{ fontSize: "2.0rem", fontWeight: "bold" }}>
+          {item}
+        </Typography>
+      </Box>
+    ))}
+  </Box>
+</Box>
+
+    </Box>
+  </CardContent>
+</Card>
+
+
       </Box>
 
       {/* Terceiro Card - Estruturas de Lona */}
@@ -85,8 +145,6 @@ const Services: React.FC = () => {
           backgroundColor: "transparent",
           color: "#fff",
           padding: "20px",
-          
-          
         }}
       >
         <CardContent>
