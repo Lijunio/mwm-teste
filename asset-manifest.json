@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/mwm-engenharia/static/css/main.65d8b693.css",
-    "main.js": "/mwm-engenharia/static/js/main.c7e2d5ec.js",
+    "main.js": "/mwm-engenharia/static/js/main.a3ad7660.js",
     "index.html": "/mwm-engenharia/index.html",
     "main.65d8b693.css.map": "/mwm-engenharia/static/css/main.65d8b693.css.map",
-    "main.c7e2d5ec.js.map": "/mwm-engenharia/static/js/main.c7e2d5ec.js.map"
+    "main.a3ad7660.js.map": "/mwm-engenharia/static/js/main.a3ad7660.js.map"
   },
   "entrypoints": [
     "static/css/main.65d8b693.css",
-    "static/js/main.c7e2d5ec.js"
+    "static/js/main.a3ad7660.js"
   ]
 }
