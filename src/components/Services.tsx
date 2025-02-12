@@ -58,65 +58,81 @@ const Services: React.FC = () => {
 
       {/* Card de Locação Simples */}
       <Card
-        sx={{
-          padding: { xs: "20px", md: "30px" },
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
-          background: "transparent",
-          color: "#fff",
-          width: { xs: "100%", md: "650px" },
-          height: { xs: "auto", md: "600px" },
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "flex-start",
-        }}
-      >
-        <CardContent>
+  sx={{
+    padding: { xs: "20px", md: "30px" },
+    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
+    background: "transparent",
+    color: "#fff",
+    width: { xs: "100%", md: "650px" },
+    height: { xs: "auto", md: "600px" },
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+  }}
+>
+  <CardContent>
+    <Typography
+      variant="h4"
+      gutterBottom
+      sx={{
+        fontWeight: "bold",
+        fontSize: { xs: "1.2rem", sm: "2rem" },
+      }}
+    >
+      Locação Simples
+    </Typography>
+    <Typography
+      variant="body1"
+      paragraph
+      sx={{ lineHeight: 1.6, fontSize: { xs: "0.9rem", sm: "1.2rem" } }}
+    >
+      Sua equipe já está em campo? Economize com a Locação Simples!
+    </Typography>
+    <Typography
+      variant="body1"
+      paragraph
+      sx={{ fontSize: { xs: "0.9rem", sm: "1.2rem" } }}
+    >
+      Com ela, você reduz custos e tempo de montagem, aproveitando ao máximo a mão de obra que você já possui.
+    </Typography>
+    <Typography
+      variant="h5"
+      sx={{ fontWeight: "bold", mt: 2, fontSize: { xs: "1rem", sm: "1.5rem" } }}
+    >
+      Como funciona:
+    </Typography>
+    <ul style={{ fontSize: "1.2rem", lineHeight: "1.8", paddingLeft: "20px" }}>
+      <li style={{ fontSize: "1rem", lineHeight: "1.6", marginBottom: "8px" }}>
+        Você escolhe os equipamentos que precisa em nosso catálogo.
+      </li>
+      <li style={{ fontSize: "1rem", lineHeight: "1.6", marginBottom: "8px" }}>
+        Nós entregamos os equipamentos diretamente no local da obra.
+      </li>
+      <li style={{ fontSize: "1rem", lineHeight: "1.6", marginBottom: "8px" }}>
+        Sua equipe realiza a montagem de forma rápida e eficiente.
+      </li>
+    </ul>
+
+    <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "15px" }}>
+      {["Eficiência", "Economia", "Agilidade"].map((item) => (
+        <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <FontAwesomeIcon icon={faPlus} size="lg" color="rgb(171, 118, 33)" />
           <Typography
-            variant="h4"
-            gutterBottom
+            variant="body1"
             sx={{
+              fontSize: { xs: "1.2rem", sm: "1.5rem" },
               fontWeight: "bold",
-              fontSize: { xs: "1.2rem", sm: "2rem" },
             }}
           >
-            Locação Simples
+            {item}
           </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            sx={{ lineHeight: 1.6, fontSize: { xs: "0.9rem", sm: "1.2rem" } }}
-          >
-            Sua equipe já está em campo? Economize com a Locação Simples!
-          </Typography>
-          <Typography
-            variant="body1"
-            paragraph
-            sx={{ fontSize: { xs: "0.9rem", sm: "1.2rem" } }}
-          >
-            Com ela, você reduz custos e tempo de montagem, aproveitando ao máximo a mão de obra que você já possui.
-          </Typography>
-          <Typography variant="h5" sx={{ fontWeight: "bold", mt: 2, fontSize: { xs: "1rem", sm: "1.5rem" } }}>
-            Como funciona:
-          </Typography>
-          <ul style={{ fontSize: "1.2rem", lineHeight: "1.8" }}>
-            <li>Você escolhe os equipamentos que precisa em nosso catálogo.</li>
-            <li>Nós entregamos os equipamentos diretamente no local da obra.</li>
-            <li>Sua equipe realiza a montagem de forma rápida e eficiente.</li>
-          </ul>
+        </Box>
+      ))}
+    </Box>
+  </CardContent>
+</Card>
 
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "15px" }}>
-            {["Eficiência", "Economia", "Agilidade"].map((item) => (
-              <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <FontAwesomeIcon icon={faPlus} size="lg" color="rgb(171, 118, 33)" />
-                <Typography variant="body1" sx={{ fontSize: { xs: "1.2rem", sm: "1.5rem" }, fontWeight: "bold" }}>
-                  {item}
-                </Typography>
-              </Box>
-            ))}
-          </Box>
-        </CardContent>
-      </Card>
     </Box>
   );
 };

@@ -17,20 +17,20 @@ const App: React.FC = () => {
         sx={{
           width: "100%",
           display: "flex",
-          flexDirection: "column", // Organiza as seções na vertical
+          flexDirection: "column", 
         }}
       >
         <Box id="home" sx={{ mb: 4 }}>
           <Home />
         </Box>
         <Box id="services" sx={{ mb: 4 }}>
-          <Services /> {/* Aqui está o componente Services */}
+          <Services /> 
         </Box>
         <Box id="additional-info" sx={{ mb: 4 }}>
-          <AdditionalInfo /> {/* Aqui está o seu AdditionalInfo */}
+          <AdditionalInfo /> 
         </Box>
         <Box id="servicesParte2" sx={{ mb: 4 }}>
-          <ServicesParte2 /> {/* Aqui está o componente ServicesParte2 */}
+          <ServicesParte2 />
         </Box>
        {/*} <Box id="about-us" sx={{ mb: 4 }}>
           <AboutUs />
