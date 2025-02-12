@@ -13,7 +13,8 @@ const Services: React.FC = () => {
         flexWrap: "wrap",
         justifyContent: "center",
         padding: "40px",
-        background: "linear-gradient(90deg, #254b3a 75%, #000000 100%) "
+        background: "linear-gradient(90deg, #254b3a 75%, #000000 100%) ",
+        border: "transparent"
       }}
     >
       {/* imagens */}
@@ -26,55 +27,7 @@ const Services: React.FC = () => {
           marginRight: "20px",
         }}
       >
-        <Card
-          sx={{
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
-            backgroundColor: "transparent",
-            width: { xs: "100%", md: "600px" },
-            height: { md: "500px" },
-          }}
-        >
-          <Carousel 
-            autoPlay
-            infiniteLoop
-            showThumbs={false}
-            showStatus={false}
-            dynamicHeight={false}
-            interval={3000}
-          >
-            <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/imagens/21.jpg`}
-                alt="Imagem 1"
-                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
-              />
-            </div>
-            <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/imagens/home/pag2.png`}
-                alt="Imagem 3"
-                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
-              />
-            </div>
-            <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/imagens/home/pag3.png`}
-                alt="Imagem 4"
-                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
-              />
-            </div>
-            <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/imagens/home/pag4.png`}
-                alt="Imagem 5"
-                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
-              />
-            </div>
-          </Carousel>
-        </Card>
-
-        {/*Locação simples */}
-        <Card
+                <Card
   sx={{
     padding: "20px",
     boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
@@ -132,6 +85,56 @@ const Services: React.FC = () => {
     </Box>
   </CardContent>
 </Card>
+
+       
+
+        {/*Locação simples */}
+        <Card
+          sx={{
+            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
+            backgroundColor: "transparent",
+            width: { xs: "100%", md: "600px" },
+            height: { md: "500px" },
+          }}
+        >
+          <Carousel 
+            autoPlay
+            infiniteLoop
+            showThumbs={false}
+            showStatus={false}
+            dynamicHeight={false}
+            interval={3000}
+          >
+            <div>
+              <img
+                src={`${process.env.PUBLIC_URL}/imagens/21.jpg`}
+                alt="Imagem 1"
+                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
+              />
+            </div>
+            <div>
+              <img
+                src={`${process.env.PUBLIC_URL}/imagens/home/pag2.png`}
+                alt="Imagem 3"
+                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
+              />
+            </div>
+            <div>
+              <img
+                src={`${process.env.PUBLIC_URL}/imagens/home/pag3.png`}
+                alt="Imagem 4"
+                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
+              />
+            </div>
+            <div>
+              <img
+                src={`${process.env.PUBLIC_URL}/imagens/home/pag4.png`}
+                alt="Imagem 5"
+                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
+              />
+            </div>
+          </Carousel>
+        </Card>
 
 
       </Box>

@@ -6,18 +6,26 @@ const Navbar: React.FC = () => {
   const theme = useTheme();
   const isLargeScreen = useMediaQuery(theme.breakpoints.up("md")); // Verifica se a tela é grande
 
+  // Função para rolar até o topo da página
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Rolagem suave
+    });
+  };
+
   return (
     <>
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: "rgba(34, 43, 50, 0.4)", 
+          backgroundColor: "rgba(34, 43, 50, 0.4)",
           boxShadow: "none",
           width: "100%",
           top: 0,
           zIndex: 9999,
           padding: "10px 0",
-          backdropFilter: "blur(5px)", 
+          backdropFilter: "blur(5px)",
         }}
       >
         <Toolbar
@@ -42,23 +50,24 @@ const Navbar: React.FC = () => {
               },
             }}
           >
-            {["Serviços", "Sobre Nós", "Contato"].map((text, index) => (
+            {["Home", "Serviços", "Contato"].map((text, index) => (
               <Button
                 key={index}
                 sx={{
                   backgroundColor: "transparent",
                   color: "#ffffff",
-                  fontSize: isLargeScreen ? "18px" : "14px", // Reduz tamanho da fonte em telas pequenas
+                  fontSize: isLargeScreen ? "18px" : "14px",
                   fontWeight: "bold",
                   transition: "color 0.3s ease",
                   minWidth: "auto", // Para evitar botões muito largos
-                  padding: isLargeScreen ? "10px 16px" : "6px 10px", // Ajusta o padding para telas menores
+                  padding: isLargeScreen ? "10px 16px" : "6px 10px",
                   "&:hover": {
                     backgroundColor: "#688198",
                     color: "#ffffff",
                   },
                 }}
-                href={index === 0 ? "#services" : index === 1 ? "#about-us" : "#contact"}
+                onClick={text === "Home" ? scrollToTop : undefined} // Chama scrollToTop para "Home"
+                href={text === "Serviços" ? "#services" : text === "Contato" ? "#contact" : undefined} // Mantém o comportamento normal nos outros botões
               >
                 {text}
               </Button>

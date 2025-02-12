@@ -30,9 +30,11 @@ const App: React.FC = () => {
         <Box id="ServicesParte2" mt={4} sx={{ flex: 1 }}>
           <ServicesParte2 />
         </Box>
+        {/* 
         <Box id="about-us" mt={4} sx={{ flex: 1 }}>
           <AboutUs />
         </Box>
+        */}
         <Box id="contact" mt={4} sx={{ flex: 1 }}>
           <Contact />
         </Box>

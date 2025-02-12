@@ -43,7 +43,8 @@ const Home = () => {
   }}
 >
   {/* Elemento 2: Logo + Texto */}
-  <Box 
+  <Box
+    id="home"
     sx={{ 
       textAlign: isSmallScreen ? "center" : "left",
       zIndex: 2, 
