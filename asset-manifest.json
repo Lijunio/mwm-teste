@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/mwm-engenharia/static/css/main.c2aa3f3a.css",
-    "main.js": "/mwm-engenharia/static/js/main.94fe05d6.js",
+    "main.js": "/mwm-engenharia/static/js/main.10707732.js",
     "static/media/slick.svg": "/mwm-engenharia/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/mwm-engenharia/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/mwm-engenharia/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/mwm-engenharia/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/mwm-engenharia/index.html",
     "main.c2aa3f3a.css.map": "/mwm-engenharia/static/css/main.c2aa3f3a.css.map",
-    "main.94fe05d6.js.map": "/mwm-engenharia/static/js/main.94fe05d6.js.map"
+    "main.10707732.js.map": "/mwm-engenharia/static/js/main.10707732.js.map"
   },
   "entrypoints": [
     "static/css/main.c2aa3f3a.css",
-    "static/js/main.94fe05d6.js"
+    "static/js/main.10707732.js"
   ]
 }
