@@ -3,7 +3,8 @@ import { CssBaseline, Box } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Services from "./components/Services";
-import ServicesParte2 from "./components/ServicesParte2";
+import AdditionalInfo from "./components/AdditionalInfo";
+import ServicesParte2 from "./components/ServicesParte2"; 
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 
@@ -12,30 +13,30 @@ const App: React.FC = () => {
     <>
       <CssBaseline />
       <Navbar />
-      {/* Ajustando o Box para ocupar 100% da tela */}
       <Box
         sx={{
-          height: "100vh", 
-          width: "100%", 
+          width: "100%",
           display: "flex",
-          flexDirection: "column", 
+          flexDirection: "column", // Organiza as seções na vertical
         }}
       >
-        <Box id="home" sx={{ flex: 1 }}>
+        <Box id="home" sx={{ mb: 4 }}>
           <Home />
         </Box>
-        <Box id="services" mt={4} sx={{ flex: 1 }}>
-          <Services />
+        <Box id="services" sx={{ mb: 4 }}>
+          <Services /> {/* Aqui está o componente Services */}
         </Box>
-        <Box id="ServicesParte2" mt={4} sx={{ flex: 1 }}>
-          <ServicesParte2 />
+        <Box id="additional-info" sx={{ mb: 4 }}>
+          <AdditionalInfo /> {/* Aqui está o seu AdditionalInfo */}
         </Box>
-        {/* 
-        <Box id="about-us" mt={4} sx={{ flex: 1 }}>
+        <Box id="servicesParte2" sx={{ mb: 4 }}>
+          <ServicesParte2 /> {/* Aqui está o componente ServicesParte2 */}
+        </Box>
+       {/*} <Box id="about-us" sx={{ mb: 4 }}>
           <AboutUs />
         </Box>
         */}
-        <Box id="contact" mt={4} sx={{ flex: 1 }}>
+        <Box id="contact" sx={{ mb: 4 }}>
           <Contact />
         </Box>
       </Box>

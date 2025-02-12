@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import { Box, Card, CardContent, Typography, Button, Grid } from "@mui/material"; // Adicionado Button
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Carousel } from "react-responsive-carousel";
@@ -99,7 +99,7 @@ const Services: React.FC = () => {
           <Typography variant="h5" sx={{ fontWeight: "bold", mt: 2, fontSize: { xs: "1rem", sm: "1.5rem" } }}>
             Como funciona:
           </Typography>
-          <ul style={{ fontSize: "1rem", lineHeight: "1.8" }}>
+          <ul style={{ fontSize: "1.2rem", lineHeight: "1.8" }}>
             <li>Você escolhe os equipamentos que precisa em nosso catálogo.</li>
             <li>Nós entregamos os equipamentos diretamente no local da obra.</li>
             <li>Sua equipe realiza a montagem de forma rápida e eficiente.</li>
@@ -122,3 +122,4 @@ const Services: React.FC = () => {
 };
 
 export default Services;
+
