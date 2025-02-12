@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
-import { Carousel } from "react-responsive-carousel"; // Importando o carrossel
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // Estilos do carrossel
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Services: React.FC = () => {
   return (
@@ -12,216 +12,104 @@ const Services: React.FC = () => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "center",
+        alignItems: "center",
         padding: "40px",
-        background: "linear-gradient(90deg, #254b3a 75%, #000000 100%) ",
+        background: "linear-gradient(90deg, #254b3a 75%, #000000 100%)",
         border: "transparent",
+        gap: "20px",
+        flexDirection: { xs: "column", md: "row" },
       }}
     >
-      {/* imagens */}
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          maxWidth: { xs: "500px", md: "600px" },
-          gap: "20px",
-          marginRight: "20px",
-        }}
-      >
-        {/* Card de Locação Simples */}
-        <Card
-          sx={{
-            padding: "20px",
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
-            background: "transparent",
-            color: "#fff",
-            width: { xs: "100%", md: "600px" },
-            height: { xs: "auto", md: "500px" }, // Altura automática em telas pequenas
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            alignItems: "flex-start",
-          }}
-        >
-          <CardContent>
-            <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, gap: "20px" }}>
-              {/* Coluna da esquerda - 70% */}
-              <Box sx={{ flex: { xs: "1", md: "7" } }}>
-                <Typography
-                  variant="h4"
-                  gutterBottom
-                  sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", sm: "2rem" } }}
-                >
-                  Locação Simples
-                </Typography>
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{ lineHeight: 1.8, fontSize: { xs: "1rem", sm: "1.2rem" } }}
-                >
-                  Sua equipe já está mobilizada em campo? Reduza custos e tempo de montagem com a Locação Simples!
-                </Typography>
-                <Typography
-                  variant="body1"
-                  paragraph
-                  sx={{ fontSize: { xs: "1rem", sm: "1.2rem" } }}
-                >
-                  A solução ideal para quando o cliente já possui equipe no local.
-                </Typography>
-              </Box>
-
-              {/* Coluna da direita - 30% */}
-              <Box sx={{ flex: { xs: "1", md: "3" } }}>
-                <Box sx={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "20px" }}>
-                  {["Eficiência", "Economia", "Agilidade"].map((item) => (
-                    <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                      <FontAwesomeIcon icon={faPlus} size="2x" color="rgb(171, 118, 33)" />
-                      <Typography variant="body1" sx={{ fontSize: "2.0rem", fontWeight: "bold" }}>
-                        {item}
-                      </Typography>
-                    </Box>
-                  ))}
-                </Box>
-              </Box>
-            </Box>
-          </CardContent>
-        </Card>
-
-        {/* Carrossel de Imagens */}
-        <Card
-          sx={{
-            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
-            backgroundColor: "transparent",
-            width: { xs: "100%", md: "600px" },
-            height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
-          }}
-        >
-          <Carousel
-            autoPlay
-            infiniteLoop
-            showThumbs={false}
-            showStatus={false}
-            dynamicHeight={false}
-            interval={3000}
-          >
-            <div>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
-                  overflow: "hidden",
-                }}
-              >
-                <img
-                  src={`${process.env.PUBLIC_URL}/imagens/21.jpg`}
-                  alt="Imagem 1"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "10px",
-                  }}
-                />
-              </Box>
-            </div>
-            <div>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
-                  overflow: "hidden",
-                }}
-              >
-                <img
-                  src={`${process.env.PUBLIC_URL}/imagens/home/pag2.png`}
-                  alt="Imagem 3"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "10px",
-                  }}
-                />
-              </Box>
-            </div>
-            <div>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
-                  overflow: "hidden",
-                }}
-              >
-                <img
-                  src={`${process.env.PUBLIC_URL}/imagens/home/pag3.png`}
-                  alt="Imagem 4"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "10px",
-                  }}
-                />
-              </Box>
-            </div>
-            <div>
-              <Box
-                sx={{
-                  width: "100%",
-                  height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
-                  overflow: "hidden",
-                }}
-              >
-                <img
-                  src={`${process.env.PUBLIC_URL}/imagens/home/pag4.png`}
-                  alt="Imagem 5"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    borderRadius: "10px",
-                  }}
-                />
-              </Box>
-            </div>
-          </Carousel>
-        </Card>
-      </Box>
-
-      {/* Terceiro Card - Estruturas de Lona */}
+      {/* Carrossel de Imagens (Agora à esquerda em telas grandes) */}
       <Card
         sx={{
-          flex: 1,
-          maxWidth: "500px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
           backgroundColor: "transparent",
+          width: { xs: "100%", md: "650px" },
+          height: { xs: "250px", md: "600px" },
+          order: { xs: 1, md: 0 },
+        }}
+      >
+        <Carousel autoPlay infiniteLoop showThumbs={false} showStatus={false} interval={3000}>
+          {["21.jpg", "home/pag2.png", "home/pag3.png", "home/pag4.png"].map((image, index) => (
+            <div key={index}>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: { xs: "250px", md: "600px" },
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={`${process.env.PUBLIC_URL}/imagens/${image}`}
+                  alt={`Imagem ${index + 1}`}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Box>
+            </div>
+          ))}
+        </Carousel>
+      </Card>
+
+      {/* Card de Locação Simples */}
+      <Card
+        sx={{
+          padding: { xs: "20px", md: "30px" },
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
+          background: "transparent",
           color: "#fff",
-          padding: "20px",
+          width: { xs: "100%", md: "650px" },
+          height: { xs: "auto", md: "600px" },
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "flex-start",
         }}
       >
         <CardContent>
-          <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold", fontSize: "2rem" }}>
-            As estruturas de lona são ideais para garantir:
+          <Typography
+            variant="h4"
+            gutterBottom
+            sx={{
+              fontWeight: "bold",
+              fontSize: { xs: "1.2rem", sm: "2rem" },
+            }}
+          >
+            Locação Simples
           </Typography>
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "20px" }}>
-            {[
-              "Redução de custos em relação a alvenaria",
-              "Menor impacto ambiental",
-              "Instalação rápida",
-              "Isenção de IPTU",
-              "Possibilidade de Expansão rápida",
-              "Flexibilidade de transporte p/ outra planta ou local rapidamente",
-              "Sem burocracias",
-              "Lonas anti abrasivas de alta resistência com filtro UV",
-              "Assistência técnica preventiva e corretiva",
-              "Flexibilidade: Adaptam-se às necessidades específicas do seu negócio.",
-              "Custo-benefício: Menores custos de construção e manutenção.",
-              "Agilidade: Montagem rápida, reduzindo o tempo de implantação.",
-              "Escalabilidade: Fácil expansão ou redução de espaço.",
-              "Sustentabilidade: Materiais recicláveis alinhados ao conceito de economia circular.",
-            ].map((item) => (
-              <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-                <FontAwesomeIcon icon={faCheck} size="lg" color="#0f0" />
-                <Typography variant="body1" sx={{ fontSize: "1.2rem" }}>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{ lineHeight: 1.6, fontSize: { xs: "0.9rem", sm: "1.2rem" } }}
+          >
+            Sua equipe já está em campo? Economize com a Locação Simples!
+          </Typography>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{ fontSize: { xs: "0.9rem", sm: "1.2rem" } }}
+          >
+            Com ela, você reduz custos e tempo de montagem, aproveitando ao máximo a mão de obra que você já possui.
+          </Typography>
+          <Typography variant="h5" sx={{ fontWeight: "bold", mt: 2, fontSize: { xs: "1rem", sm: "1.5rem" } }}>
+            Como funciona:
+          </Typography>
+          <ul style={{ fontSize: "1rem", lineHeight: "1.8" }}>
+            <li>Você escolhe os equipamentos que precisa em nosso catálogo.</li>
+            <li>Nós entregamos os equipamentos diretamente no local da obra.</li>
+            <li>Sua equipe realiza a montagem de forma rápida e eficiente.</li>
+          </ul>
+
+          <Box sx={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "15px" }}>
+            {["Eficiência", "Economia", "Agilidade"].map((item) => (
+              <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                <FontAwesomeIcon icon={faPlus} size="lg" color="rgb(171, 118, 33)" />
+                <Typography variant="body1" sx={{ fontSize: { xs: "1.2rem", sm: "1.5rem" }, fontWeight: "bold" }}>
                   {item}
                 </Typography>
               </Box>
