@@ -91,7 +91,7 @@ const Home = () => {
       width: "100%",
       maxWidth: "600px",
       border: "none",
-      marginTop: isSmallScreen ? "60px" : "40px", // Levantar em telas pequenas
+      marginTop: isSmallScreen ? "30px" : "40px", // Levantar em telas pequenas
       marginLeft: isSmallScreen ? "0px" : "200px",
     }}
   >

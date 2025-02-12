@@ -4,13 +4,12 @@ import { useTheme } from "@mui/material/styles";
 
 const Navbar: React.FC = () => {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md")); // Verifica se a tela é grande
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md")); 
 
-  // Função para rolar até o topo da página
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", // Rolagem suave
+      behavior: "smooth", 
     });
   };
 
@@ -39,7 +38,7 @@ const Navbar: React.FC = () => {
           <Box
             sx={{
               display: "flex",
-              gap: isLargeScreen ? 8 : 2, // Reduz espaço entre os botões em telas pequenas
+              gap: isLargeScreen ? 8 : 2, 
               justifyContent: "center",
               width: "100%",
               position: "relative",
@@ -59,15 +58,15 @@ const Navbar: React.FC = () => {
                   fontSize: isLargeScreen ? "18px" : "14px",
                   fontWeight: "bold",
                   transition: "color 0.3s ease",
-                  minWidth: "auto", // Para evitar botões muito largos
+                  minWidth: "auto", 
                   padding: isLargeScreen ? "10px 16px" : "6px 10px",
                   "&:hover": {
                     backgroundColor: "#688198",
                     color: "#ffffff",
                   },
                 }}
-                onClick={text === "Home" ? scrollToTop : undefined} // Chama scrollToTop para "Home"
-                href={text === "Serviços" ? "#services" : text === "Contato" ? "#contact" : undefined} // Mantém o comportamento normal nos outros botões
+                onClick={text === "Home" ? scrollToTop : undefined} 
+                href={text === "Serviços" ? "#services" : text === "Contato" ? "#contact" : undefined}
               >
                 {text}
               </Button>
