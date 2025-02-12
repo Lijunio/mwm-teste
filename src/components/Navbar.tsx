@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
           <Box
             sx={{
               display: "flex",
-              gap: isLargeScreen ? 8 : 4, // telas grandes
+              gap: isLargeScreen ? 8 : 2, // Reduz espaço entre os botões em telas pequenas
               justifyContent: "center",
               width: "100%",
               position: "relative",
@@ -42,54 +42,27 @@ const Navbar: React.FC = () => {
               },
             }}
           >
-            <Button
-              sx={{
-                backgroundColor: "transparent",
-                color: "#ffffff",
-                fontSize: "18px",
-                fontWeight: "bold",
-                transition: "color 0.3s ease",
-                "&:hover": {
-                  backgroundColor: "#688198",
+            {["Serviços", "Sobre Nós", "Contato"].map((text, index) => (
+              <Button
+                key={index}
+                sx={{
+                  backgroundColor: "transparent",
                   color: "#ffffff",
-                },
-              }}
-              href="#services"
-            >
-              Serviços
-            </Button>
-            <Button
-              sx={{
-                backgroundColor: "transparent",
-                color: "#ffffff",
-                fontSize: "18px",
-                fontWeight: "bold",
-                transition: "color 0.3s ease",
-                "&:hover": {
-                  backgroundColor: "#688198",
-                  color: "#ffffff",
-                },
-              }}
-              href="#about-us"
-            >
-              Sobre Nós
-            </Button>
-            <Button
-              sx={{
-                backgroundColor: "transparent",
-                color: "#ffffff",
-                fontSize: "18px",
-                fontWeight: "bold",
-                transition: "color 0.3s ease",
-                "&:hover": {
-                  backgroundColor: "#688198",
-                  color: "#ffffff",
-                },
-              }}
-              href="#contact"
-            >
-              Contato
-            </Button>
+                  fontSize: isLargeScreen ? "18px" : "14px", // Reduz tamanho da fonte em telas pequenas
+                  fontWeight: "bold",
+                  transition: "color 0.3s ease",
+                  minWidth: "auto", // Para evitar botões muito largos
+                  padding: isLargeScreen ? "10px 16px" : "6px 10px", // Ajusta o padding para telas menores
+                  "&:hover": {
+                    backgroundColor: "#688198",
+                    color: "#ffffff",
+                  },
+                }}
+                href={index === 0 ? "#services" : index === 1 ? "#about-us" : "#contact"}
+              >
+                {text}
+              </Button>
+            ))}
           </Box>
         </Toolbar>
       </AppBar>

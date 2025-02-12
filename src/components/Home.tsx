@@ -33,10 +33,10 @@ const Home = () => {
         width: "100%",
         display: "flex",
         flexDirection: "column",
-        alignItems: "flex-start", // Alinhar conteúdo à esquerda
-        justifyContent: "flex-start", // Alinhar conteúdo no topo
-        background: `url(${process.env.PUBLIC_URL}/imagens/fundo.png) no-repeat right center`, // Imagem no lado direito
-        backgroundSize: "contain", // Ajustar a imagem para caber no espaço
+        alignItems: isSmallScreen ? "center" : "flex-start", // Centraliza em telas pequenas
+        justifyContent: "flex-start", 
+        background: `url(${process.env.PUBLIC_URL}/imagens/fundo.png) no-repeat right center`,
+        backgroundSize: "contain",
         padding: isSmallScreen ? "16px" : "32px",
         position: "relative",
         overflow: "hidden", 
@@ -45,12 +45,12 @@ const Home = () => {
       {/* Elemento 2: Logo + Texto */}
       <Box 
         sx={{ 
-          textAlign: "left", // Alinhar texto à esquerda
+          textAlign: isSmallScreen ? "center" : "left", // Centraliza texto em telas pequenas
           zIndex: 2, 
           width: "100%", 
           maxWidth: "600px", 
           marginTop: isSmallScreen ? "20px" : "",
-          marginLeft: isSmallScreen ? "120px" : "250px", // Afastar da borda esquerda
+          marginLeft: isSmallScreen ? "0px" : "250px", // Mantém alinhamento à esquerda em telas grandes
         }}
       >
         <img
@@ -59,7 +59,10 @@ const Home = () => {
           style={{
             width: isSmallScreen ? "200px" : "300px",
             height: "auto",
-            marginBottom: "20px", 
+            marginBottom: "20px",
+            display: "block", // Garante centralização
+            marginLeft: isSmallScreen ? "auto" : "0",
+            marginRight: isSmallScreen ? "auto" : "0",
           }}
         />
         <Typography
@@ -70,7 +73,7 @@ const Home = () => {
             fontWeight: "bold",
             letterSpacing: "3px",
             textTransform: "uppercase",
-            textAlign: "left", // Alinhar texto à esquerda
+            textAlign: isSmallScreen ? "center" : "left",
             color: "white"
           }}
         >
@@ -83,12 +86,12 @@ const Home = () => {
         sx={{
           bgcolor: "transparent",
           color: "white",
-          textAlign: "left", // Alinhar texto à esquerda
+          textAlign: isSmallScreen ? "center" : "left", // Centraliza texto em telas pequenas
           width: "100%",
           maxWidth: "600px",
           border: "none",
-          marginTop: isSmallScreen ? "80px" : "40px",
-          marginLeft: isSmallScreen ? "20px" : "200px", // Afastar da borda esquerda
+          marginTop: isSmallScreen ? "20px" : "40px",
+          marginLeft: isSmallScreen ? "0px" : "200px", // Mantém alinhamento à esquerda em telas grandes
         }}
       >
         <CardContent 
@@ -104,7 +107,7 @@ const Home = () => {
             sx={{
               fontWeight: "bold",
               fontSize: isSmallScreen ? "1.2rem" : "2rem",
-              textAlign: "left",
+              textAlign: isSmallScreen ? "center" : "left",
               color: "white", 
               marginBottom: "20px",  
             }}
@@ -113,8 +116,8 @@ const Home = () => {
           </Typography>
           <ul style={{ 
             listStyleType: "disc",  
-            paddingLeft: "20px",
-            textAlign: "left", 
+            paddingLeft: isSmallScreen ? "0px" : "20px",
+            textAlign: isSmallScreen ? "center" : "left",
           }}>
             <li style={{ fontSize: "1.2rem", marginBottom: "10px", color: "white" }}>
               Galpão Lonado e com Telhas de Zinco
@@ -132,13 +135,14 @@ const Home = () => {
         </CardContent>
       </Card>
 
-      {/* Elemento 4: Botão centralizado abaixo dos elementos 2 e 3 */}
+      {/* Elemento 4: Botão abaixo dos elementos 2 e 3 */}
       <Box
         sx={{
           width: "100%",
           display: "flex",
-          justifyContent: "center", // Centralizar o botão horizontalmente
-          marginTop: isSmallScreen ? "20px" : "40px", // Espaçamento acima do botão
+          justifyContent: isSmallScreen ? "center" : "flex-start", // Centraliza botão apenas em telas pequenas
+          marginTop: isSmallScreen ? "20px" : "40px",
+          marginLeft: isSmallScreen ? "0px" : "200px",
         }}
       >
         <Button
