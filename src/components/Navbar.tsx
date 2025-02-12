@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
         </Toolbar>
       </AppBar>
 
-      <Box sx={{ marginTop: "100px", padding: "20px" }} />
+      <Box sx={{ marginTop: "100px", }} />
     </>
   );
 };

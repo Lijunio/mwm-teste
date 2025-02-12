@@ -50,7 +50,7 @@ const Home = () => {
       zIndex: 2, 
       width: "100%", 
       maxWidth: "600px", 
-      marginTop: isSmallScreen ? "-20px" : "20px", // Levantar em telas pequenas
+      marginTop: isSmallScreen ? "-20px" : "20px", //  telas pequenas
       marginLeft: isSmallScreen ? "0px" : "250px",
     }}
   >
@@ -91,7 +91,7 @@ const Home = () => {
       width: "100%",
       maxWidth: "600px",
       border: "none",
-      marginTop: isSmallScreen ? "30px" : "40px", // Levantar em telas pequenas
+      marginTop: isSmallScreen ? "30px" : "40px", //  telas pequenas
       marginLeft: isSmallScreen ? "0px" : "200px",
     }}
   >
@@ -142,7 +142,7 @@ const Home = () => {
       width: "100%",
       display: "flex",
       justifyContent: isSmallScreen ? "center" : "flex-start",
-      marginTop: isSmallScreen ? "30px" : "40px", // Levantar botão em telas pequenas
+      marginTop: isSmallScreen ? "30px" : "40px", // telas pequenas
       marginLeft: isSmallScreen ? "0px" : "200px",
     }}
   >
