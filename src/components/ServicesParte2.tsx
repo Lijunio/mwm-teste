@@ -110,18 +110,20 @@ const Services: React.FC = () => {
             <strong>Custo-benefício:</strong>
             <ul>
               <li>Estruturas mais econômicas do que galpões de metal ou concreto.</li>
+              <li>Baixo custo de manutenção e operação, aumentando a economia a longo prazo.</li>
             </ul>
           </Typography>
           <Typography variant="body1" paragraph>
             <strong>Mobilidade:</strong>
             <ul>
               <li>Podem ser realocados facilmente conforme a necessidade.</li>
+              <li>Permite mudanças rápidas de espaço para empresas dinâmicas.</li>
             </ul>
           </Typography>
           <Typography variant="body1" paragraph>
             <strong>Adaptabilidade:</strong>
             <ul>
-              <li>Pode ser usado em centros logísticos de cidades ou no campo para abrigar colheitas.</li>
+              <li>Uso flexível em centros urbanos ou no campo.</li>
               <li>Variedade de tamanhos e modelos para atender diferentes demandas.</li>
             </ul>
           </Typography>
