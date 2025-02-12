@@ -14,7 +14,7 @@ const Services: React.FC = () => {
         justifyContent: "center",
         padding: "40px",
         background: "linear-gradient(90deg, #254b3a 75%, #000000 100%) ",
-        border: "transparent"
+        border: "transparent",
       }}
     >
       {/* imagens */}
@@ -27,77 +27,75 @@ const Services: React.FC = () => {
           marginRight: "20px",
         }}
       >
-                <Card
-  sx={{
-    padding: "20px",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
-    background: "transparent",
-    color: "#fff",
-    width: { xs: "100%", md: "600px" },
-    height: { md: "500px" },
-    display: "flex", 
-    flexDirection: "column", 
-    justifyContent: "center", 
-    alignItems: "flex-start", 
-  }}
->
-  <CardContent>
-    <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, gap: "20px" }}>
-      {/* Coluna da esquerda - 70% */}
-      <Box sx={{ flex: { xs: "1", md: "7" } }}>
-        <Typography
-          variant="h4"
-          gutterBottom
-          sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", sm: "2rem" } }}
+        {/* Card de Locação Simples */}
+        <Card
+          sx={{
+            padding: "20px",
+            boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
+            background: "transparent",
+            color: "#fff",
+            width: { xs: "100%", md: "600px" },
+            height: { xs: "auto", md: "500px" }, // Altura automática em telas pequenas
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "flex-start",
+          }}
         >
-          Locação Simples
-        </Typography>
-        <Typography
-          variant="body1"
-          paragraph
-          sx={{ lineHeight: 1.8, fontSize: { xs: "1rem", sm: "1.2rem" } }}
-        >
-          Sua equipe já está mobilizada em campo? Reduza custos e tempo de montagem com a Locação Simples!
-        </Typography>
-        <Typography
-          variant="body1"
-          paragraph
-          sx={{ fontSize: { xs: "1rem", sm: "1.2rem" } }}
-        >
-          A solução ideal para quando o cliente já possui equipe no local.
-        </Typography>
-      </Box>
+          <CardContent>
+            <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, gap: "20px" }}>
+              {/* Coluna da esquerda - 70% */}
+              <Box sx={{ flex: { xs: "1", md: "7" } }}>
+                <Typography
+                  variant="h4"
+                  gutterBottom
+                  sx={{ fontWeight: "bold", fontSize: { xs: "1.5rem", sm: "2rem" } }}
+                >
+                  Locação Simples
+                </Typography>
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{ lineHeight: 1.8, fontSize: { xs: "1rem", sm: "1.2rem" } }}
+                >
+                  Sua equipe já está mobilizada em campo? Reduza custos e tempo de montagem com a Locação Simples!
+                </Typography>
+                <Typography
+                  variant="body1"
+                  paragraph
+                  sx={{ fontSize: { xs: "1rem", sm: "1.2rem" } }}
+                >
+                  A solução ideal para quando o cliente já possui equipe no local.
+                </Typography>
+              </Box>
 
-      {/* Coluna da direita - 30% */}
-<Box sx={{ flex: { xs: "1", md: "3" } }}>
-  <Box sx={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "20px" }}>
-    {["Eficiência", "Economia", "Agilidade"].map((item) => (
-      <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
-        <FontAwesomeIcon icon={faPlus} size="2x" color="rgb(171, 118, 33)" /> {/* Ícone maior e com a nova cor */}
-        <Typography variant="body1" sx={{ fontSize: "2.0rem", fontWeight: "bold" }}>
-          {item}
-        </Typography>
-      </Box>
-    ))}
-  </Box>
-</Box>
+              {/* Coluna da direita - 30% */}
+              <Box sx={{ flex: { xs: "1", md: "3" } }}>
+                <Box sx={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "20px" }}>
+                  {["Eficiência", "Economia", "Agilidade"].map((item) => (
+                    <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <FontAwesomeIcon icon={faPlus} size="2x" color="rgb(171, 118, 33)" />
+                      <Typography variant="body1" sx={{ fontSize: "2.0rem", fontWeight: "bold" }}>
+                        {item}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              </Box>
+            </Box>
+          </CardContent>
+        </Card>
 
-    </Box>
-  </CardContent>
-</Card>
-
-       
-
-        {/*Locação simples */}
+        {/* Carrossel de Imagens */}
         <Card
           sx={{
             boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
             backgroundColor: "transparent",
             width: { xs: "100%", md: "600px" },
-            height: { md: "500px" },
+            height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
           }}
         >
-          <Carousel 
+          <Carousel
             autoPlay
             infiniteLoop
             showThumbs={false}
@@ -106,37 +104,87 @@ const Services: React.FC = () => {
             interval={3000}
           >
             <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/imagens/21.jpg`}
-                alt="Imagem 1"
-                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
-              />
+              <Box
+                sx={{
+                  width: "100%",
+                  height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={`${process.env.PUBLIC_URL}/imagens/21.jpg`}
+                  alt="Imagem 1"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Box>
             </div>
             <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/imagens/home/pag2.png`}
-                alt="Imagem 3"
-                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
-              />
+              <Box
+                sx={{
+                  width: "100%",
+                  height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={`${process.env.PUBLIC_URL}/imagens/home/pag2.png`}
+                  alt="Imagem 3"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Box>
             </div>
             <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/imagens/home/pag3.png`}
-                alt="Imagem 4"
-                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
-              />
+              <Box
+                sx={{
+                  width: "100%",
+                  height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={`${process.env.PUBLIC_URL}/imagens/home/pag3.png`}
+                  alt="Imagem 4"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Box>
             </div>
             <div>
-              <img
-                src={`${process.env.PUBLIC_URL}/imagens/home/pag4.png`}
-                alt="Imagem 5"
-                style={{ width: "100%", height: "500px", objectFit: "cover", borderRadius: "10px" }}
-              />
+              <Box
+                sx={{
+                  width: "100%",
+                  height: { xs: "300px", md: "500px" }, // Altura menor em telas pequenas
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src={`${process.env.PUBLIC_URL}/imagens/home/pag4.png`}
+                  alt="Imagem 5"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Box>
             </div>
           </Carousel>
         </Card>
-
-
       </Box>
 
       {/* Terceiro Card - Estruturas de Lona */}
@@ -155,7 +203,22 @@ const Services: React.FC = () => {
             As estruturas de lona são ideais para garantir:
           </Typography>
           <Box sx={{ display: "flex", flexDirection: "column", gap: "10px", marginTop: "20px" }}>
-            {["Redução de custos em relação a alvenaria", "Menor impacto ambiental", "Instalação rápida", "Isenção de IPTU", "Possibilidade de Expansão rápida", "Flexibilidade de transporte p/ outra planta ou local rapidamente", "Sem burocracias", "Lonas anti abrasivas de alta resistência com filtro UV", "Assistência técnica preventiva e corretiva", "Flexibilidade: Adaptam-se às necessidades específicas do seu negócio.", "Custo-benefício: Menores custos de construção e manutenção.", "Agilidade: Montagem rápida, reduzindo o tempo de implantação.", "Escalabilidade: Fácil expansão ou redução de espaço.", "Sustentabilidade: Materiais recicláveis alinhados ao conceito de economia circular."].map((item) => (
+            {[
+              "Redução de custos em relação a alvenaria",
+              "Menor impacto ambiental",
+              "Instalação rápida",
+              "Isenção de IPTU",
+              "Possibilidade de Expansão rápida",
+              "Flexibilidade de transporte p/ outra planta ou local rapidamente",
+              "Sem burocracias",
+              "Lonas anti abrasivas de alta resistência com filtro UV",
+              "Assistência técnica preventiva e corretiva",
+              "Flexibilidade: Adaptam-se às necessidades específicas do seu negócio.",
+              "Custo-benefício: Menores custos de construção e manutenção.",
+              "Agilidade: Montagem rápida, reduzindo o tempo de implantação.",
+              "Escalabilidade: Fácil expansão ou redução de espaço.",
+              "Sustentabilidade: Materiais recicláveis alinhados ao conceito de economia circular.",
+            ].map((item) => (
               <Box key={item} sx={{ display: "flex", alignItems: "center", gap: "10px" }}>
                 <FontAwesomeIcon icon={faCheck} size="lg" color="#0f0" />
                 <Typography variant="body1" sx={{ fontSize: "1.2rem" }}>
