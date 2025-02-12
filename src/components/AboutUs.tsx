@@ -1,177 +1,123 @@
-import React from "react";
-import { Box, Card, Typography, Button, Grid } from "@mui/material";
+import React, { useState } from "react";
+import { Box, Card, Typography, IconButton } from "@mui/material";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const AboutUs: React.FC = () => {
-  const handleBudgetRequest = (title: string) => {
-    const message = `Olá! Estive analisando o seu site e tenho uma dúvida em relação a ${title}.`;
-    window.open(
-      `https://wa.me/5531991502088?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
+const Faq: React.FC = () => {
+  const [expanded, setExpanded] = useState<boolean[]>([false, false]);
+
+  const handleToggle = (index: number) => {
+    setExpanded(prevState => {
+      const newState = [...prevState];
+      newState[index] = !newState[index];
+      return newState;
+    });
   };
 
   return (
     <Box sx={{ p: 4, fontFamily: "'Roboto', sans-serif" }}>
-      <Grid container spacing={4} justifyContent="center">
-        <Grid item xs={12} sm={6} md={6}>
-          <Card
-            sx={{
-              padding: 3,
-              boxShadow: 3,
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              height: "100%",
-              borderRadius: 4,
-              background: "linear-gradient(to bottom, rgb(44, 50, 56), rgb(171, 118, 33))",
-              color: "white",
-            }}
-          >
-            <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
-              Galpão Lonado e Zinco
-            </Typography>
-            <Typography sx={{ mb: 3 }}>
-              Coberturas feitas com estrutura de aço carbono e alumínio, usando lonas resistentes ou telhas galvanizadas.
-              Oferecem redução de custos, montagem personalizada e atendem várias necessidades, como obras, oficinas e armazenagem.
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "rgb(44, 50, 56)",
-                color: "#ffffff",
-                fontWeight: "bold",
-                "&:hover": {
-                  backgroundColor: "#688198",
-                  color: "#ffffff",
-                },
-              }}
-              onClick={() => handleBudgetRequest("Galpão Lonado e Zinco")}
-            >
-              Orçamento
-            </Button>
-          </Card>
-        </Grid>
+      {/* Título da seção */}
+      <Typography variant="h3" sx={{ fontWeight: "bold", textAlign: "left", color: "white", mb: 4 }}>
+        Perguntas Frequentes
+      </Typography>
 
-        <Grid item xs={12} sm={6} md={6}>
-          <Card
-            sx={{
-              padding: 3,
-              boxShadow: 3,
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              height: "100%",
-              borderRadius: 4,
-              background: "linear-gradient(to bottom, rgb(44, 50, 56), rgb(171, 118, 33))",
-              color: "white",
-            }}
-          >
-            <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
-              Galpão c/ Portão e Janela
-            </Typography>
-            <Typography sx={{ mb: 3 }}>
-              Estrutura robusta com pé-direito de 3 a 6 metros. Venda ou locação mensal, com módulos ajustáveis. Usada em controle de acesso, armazenagem, refeitórios, vestuários e áreas de vivência. Consulte condições.
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "rgb(44, 50, 56)",
-                color: "#ffffff",
-                fontWeight: "bold",
-                "&:hover": {
-                  backgroundColor: "#688198",
-                  color: "#ffffff",
-                },
-              }}
-              onClick={() => handleBudgetRequest("Galpão c/ Portão e Janela")}
-            >
-              Orçamento
-            </Button>
-          </Card>
-        </Grid>
+      {/* Pergunta 1 */}
+      <Card
+        sx={{
+          padding: 3,
+          boxShadow: 3,
+          textAlign: "left", // Alinha o texto à esquerda
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start", // Alinha os itens à esquerda
+          height: "100%",
+          borderRadius: 4,
+          backgroundColor: "#222b32", // Cor de fundo
+          color: "white",
+          mb: 4, // Espaço entre os cards
+          position: "relative", // Necessário para a posição absoluta da seta
+        }}
+      >
+        <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+          1. Quais são as vantagens de usar lonas anti abrasivas com filtro UV em minhas estruturas?
+        </Typography>
 
-        <Grid item xs={12} sm={6} md={6}>
-          <Card
-            sx={{
-              padding: 3,
-              boxShadow: 3,
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              height: "100%",
-              borderRadius: 4,
-              background: "linear-gradient(to bottom, rgb(44, 50, 56), rgb(171, 118, 33))",
-              color: "white",
-            }}
-          >
-            <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
-              Tenda Carpa
-            </Typography>
-            <Typography sx={{ mb: 3 }}>
-              Design moderno em alumínio e aço carbono, com segurança e flexibilidade. Ideal para escritórios, refeitórios, vestuários, armazenagem e outros. Solução personalizada para demandas em todo o Brasil.
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "rgb(44, 50, 56)",
-                color: "#ffffff",
-                fontWeight: "bold",
-                "&:hover": {
-                  backgroundColor: "#688198",
-                  color: "#ffffff",
-                },
-              }}
-              onClick={() => handleBudgetRequest("Tenda Carpa")}
-            >
-              Orçamento
-            </Button>
-          </Card>
-        </Grid>
+        {/* Setinha para expandir */}
+        <IconButton 
+          onClick={() => handleToggle(0)} 
+          sx={{
+            color: "white", 
+            position: "absolute", 
+            right: 16, 
+            top: "50%", 
+            transform: "translateY(-50%)", 
+            fontSize: 30, // Aumentando o tamanho da seta
+          }}
+        >
+          <ExpandMoreIcon />
+        </IconButton>
 
-        <Grid item xs={12} sm={6} md={6}>
-          <Card
-            sx={{
-              padding: 3,
-              boxShadow: 3,
-              textAlign: "center",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              height: "100%",
-              borderRadius: 4,
-              background: "linear-gradient(to bottom, rgb(44, 50, 56), rgb(171, 118, 33))",
-              color: "white",
-            }}
-          >
-            <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
-              Lonas Sob Medida
-            </Typography>
-            <Typography sx={{ mb: 3 }}>
-              Produzimos lonas sob medida, com alta qualidade e garantia. Atendemos diversas necessidades e trabalhamos com as melhores marcas do mercado, sempre priorizando a durabilidade.
-            </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "rgb(44, 50, 56)",
-                color: "#ffffff",
-                fontWeight: "bold",
-                "&:hover": {
-                  backgroundColor: "#688198",
-                  color: "#ffffff",
-                },
-              }}
-              onClick={() => handleBudgetRequest("Lonas Sob Medida")}
-            >
-              Orçamento
-            </Button>
-          </Card>
-        </Grid>
-      </Grid>
+        {/* Resposta */}
+        {expanded[0] && (
+          <Typography sx={{ mt: 2 }}>
+            As lonas anti abrasivas com filtro UV oferecem diversas vantagens para suas estruturas, incluindo:
+            <br /><br />
+            <strong>Durabilidade:</strong> A alta resistência à abrasão garante maior vida útil à lona, reduzindo a necessidade de substituições frequentes.
+            <br /><br />
+            <strong>Proteção:</strong> O filtro UV protege contra os raios solares, prevenindo o desgaste da lona e dos materiais armazenados sob ela.
+            <br /><br />
+            <strong>Segurança:</strong> A resistência à abrasão e ao rasgo garante maior segurança para pessoas e bens.
+            <br /><br />
+            <strong>Economia:</strong> A durabilidade e a proteção UV reduzem custos de manutenção e substituição.
+          </Typography>
+        )}
+      </Card>
+
+      {/* Pergunta 2 */}
+      <Card
+        sx={{
+          padding: 3,
+          boxShadow: 3,
+          textAlign: "left", // Alinha o texto à esquerda
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start", // Alinha os itens à esquerda
+          height: "100%",
+          borderRadius: 4,
+          backgroundColor: "#222b32", // Cor de fundo
+          color: "white",
+          mb: 4, // Espaço entre os cards
+          position: "relative", // Necessário para a posição absoluta da seta
+        }}
+      >
+        <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+          2. Qual a vida útil esperada para uma lona anti abrasiva com filtro UV?
+        </Typography>
+
+        {/* Setinha para expandir */}
+        <IconButton 
+          onClick={() => handleToggle(1)} 
+          sx={{
+            color: "white", 
+            position: "absolute", 
+            right: 16, 
+            top: "50%", 
+            transform: "translateY(-50%)", 
+            fontSize: 30, // Aumentando o tamanho da seta
+          }}
+        >
+          <ExpandMoreIcon />
+        </IconButton>
+
+        {/* Resposta */}
+        {expanded[1] && (
+          <Typography sx={{ mt: 2 }}>
+            A vida útil de uma lona anti abrasiva com filtro UV pode variar de 5 a 10 anos, dependendo das condições de uso e manutenção. A proteção UV e a resistência à abrasão prolongam sua durabilidade, mas fatores como exposição intensa ao sol, vento e poluição podem afetar o tempo de vida útil.
+          </Typography>
+        )}
+      </Card>
+
     </Box>
   );
 };
 
-export default AboutUs;
+export default Faq;

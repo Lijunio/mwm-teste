@@ -32,10 +32,10 @@ const App: React.FC = () => {
         <Box id="servicesParte2" sx={{ mb: 4 }}>
           <ServicesParte2 />
         </Box>
-       {/*} <Box id="about-us" sx={{ mb: 4 }}>
+        <Box id="about-us" sx={{ mb: 4 }}>
           <AboutUs />
         </Box>
-        */}
+        
         <Box id="contact" sx={{ mb: 4 }}>
           <Contact />
         </Box>
