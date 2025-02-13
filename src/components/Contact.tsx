@@ -14,7 +14,7 @@ const Contact: React.FC = () => {
         variant="h3"
         gutterBottom
         sx={{
-          fontSize: { xs: "1.6rem", sm: "2rem", md: "3rem" }, // Ajusta o tamanho do título
+          fontSize: { xs: "1.6rem", sm: "2rem", md: "3rem" }, 
         }}
       >
         Contato
@@ -22,12 +22,13 @@ const Contact: React.FC = () => {
       <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, mt: 4 }}>
         <Button
           startIcon={<PhoneIcon />}
+          href="tel:+5531991502088" 
           sx={{
             color: "white",
             border: "1px solid white",
             borderRadius: 2,
             padding: "10px 20px",
-            fontSize: { xs: "0.5rem", sm: "1rem" }, // Ajusta o tamanho da fonte no botão
+            fontSize: { xs: "0.5rem", sm: "1rem" },
             "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
           }}
         >
@@ -44,7 +45,7 @@ const Contact: React.FC = () => {
             border: "1px solid white",
             borderRadius: 2,
             padding: "10px 20px",
-            fontSize: { xs: "0.5rem", sm: "1rem" }, // Ajusta o tamanho da fonte no botão
+            fontSize: { xs: "0.5rem", sm: "1rem" }, 
             "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
           }}
         >
