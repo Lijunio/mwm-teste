@@ -169,11 +169,10 @@ const AdditionalInfo: React.FC = () => {
                 padding: "10px 20px",
                 borderRadius: "5px",
                 fontSize: "1.1rem",
-                backgroundColor: "#254B3A",
-                "&:hover": {
-                  backgroundColor: "#ffffff",
-                  color: "#688198",
-                },
+                backgroundColor: "rgba(0, 0, 0, 0.7)", 
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 1)", 
+    },
               }}
               onClick={handleButtonClick}
             >

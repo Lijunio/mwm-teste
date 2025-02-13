@@ -154,13 +154,13 @@ const Home = () => {
         <Button
   variant="contained"
   sx={{
-    backgroundColor: "rgba(0, 0, 0, 0.7)", // Preto com 70% de transparência
     color: "white",
     padding: "10px 20px",
     fontSize: "1.2rem",
     fontWeight: "bold",
+    backgroundColor: "rgba(0, 0, 0, 0.7)", 
     "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 1)", // Preto sólido no hover
+      backgroundColor: "rgba(0, 0, 0, 1)", 
     },
   }}
   onClick={() => window.open(whatsappLink, "_blank")}

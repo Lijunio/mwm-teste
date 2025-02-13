@@ -55,11 +55,10 @@ const Services: React.FC = () => {
                 opacity: 0.97,
                 color: "#ffffff",
                 fontWeight: "bold",
-                backgroundColor: "#254B3A",
-                "&:hover": {
-                  backgroundColor: "#ffffff",
-                  color: "#688198",
-                },
+                backgroundColor: "rgba(0, 0, 0, 0.7)", 
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 1)", 
+    },
               }}
               onClick={() => handleBudgetRequest("Galpão Lonado")}
             >
@@ -109,11 +108,10 @@ const Services: React.FC = () => {
                 opacity: 0.97,
                 color: "#ffffff",
                 fontWeight: "bold",
-                backgroundColor: "#254B3A",
-                "&:hover": {
-                  backgroundColor: "#ffffff",
-                  color: "#688198",
-                },
+                backgroundColor: "rgba(0, 0, 0, 0.7)", 
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 1)", 
+    },
               }}
               onClick={() => handleBudgetRequest("Tenda Carpa")}
             >
@@ -163,11 +161,10 @@ const Services: React.FC = () => {
                 opacity: 0.97,
                 color: "#ffffff",
                 fontWeight: "bold",
-                backgroundColor: "#254B3A",
-                "&:hover": {
-                  backgroundColor: "#ffffff",
-                  color: "#688198",
-                },
+                backgroundColor: "rgba(0, 0, 0, 0.7)", 
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 1)", 
+    },
               }}
               onClick={() => handleBudgetRequest("Lonas Sob Medida")}
             >
