@@ -55,17 +55,18 @@ const Home = () => {
     }}
   >
     <img
-      src={`${process.env.PUBLIC_URL}/imagens/logo.png`}
-      alt="Logo"
-      style={{
-        width: isSmallScreen ? "200px" : "300px",
-        height: "auto",
-        marginBottom: "20px",
-        display: "block",
-        marginLeft: isSmallScreen ? "auto" : "0",
-        marginRight: isSmallScreen ? "auto" : "0",
-      }}
-    />
+  src={`${process.env.PUBLIC_URL}/imagens/logo.png`}
+  alt="Logo"
+  style={{
+    width: isSmallScreen ? "200px" : "300px",
+    height: "auto",
+    marginBottom: "20px",
+    display: "block",
+    marginLeft: isSmallScreen ? "auto" : "100px", 
+    marginRight: isSmallScreen ? "auto" : "0",
+  }}
+/>
+
     <Typography
       variant="h6"
       component="p"
@@ -138,27 +139,31 @@ const Home = () => {
 
   {/* Elemento 4: Botão */}
   <Box
+  sx={{
+    width: "100%",
+    display: "flex",
+    justifyContent: isSmallScreen ? "center" : "flex-start",
+    marginTop: isSmallScreen ? "30px" : "40px",
+    marginLeft: isSmallScreen ? "0px" : "650px",
+  }}
+>
+  <Button
+    variant="contained"
     sx={{
-      width: "100%",
-      display: "flex",
-      justifyContent: isSmallScreen ? "center" : "flex-start",
-      marginTop: isSmallScreen ? "30px" : "40px", // telas pequenas
-      marginLeft: isSmallScreen ? "0px" : "200px",
+      backgroundColor: "rgba(90, 90, 90, 0.8)", // Cinza com transparência
+      color: "white",
+      padding: "10px 20px",
+      fontSize: "1.2rem",
+      fontWeight: "bold",
+      "&:hover": {
+        backgroundColor: "rgba(128, 128, 128, 1)", // Fica 100% opaco ao passar o mouse
+      },
     }}
   >
-    <Button
-      variant="contained"
-      sx={{
-        backgroundColor: "#254B3A",
-        color: "white",
-        padding: "10px 20px",
-        fontSize: "1.2rem",
-        fontWeight: "bold",
-      }}
-    >
-      Solicite seu orçamento
-    </Button>
-  </Box>
+    Solicite seu orçamento
+  </Button>
+</Box>
+
 </Box>
   );
 };

@@ -14,7 +14,7 @@ const Services: React.FC = () => {
         justifyContent: "center",
         alignItems: "center",
         padding: "40px",
-        background: "linear-gradient(90deg, #254b3a 75%, #000000 100%)",
+        background: "transparent",
         border: "transparent",
         gap: "20px",
         flexDirection: { xs: "column", md: "row" },

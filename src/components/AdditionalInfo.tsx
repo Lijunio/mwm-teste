@@ -1,21 +1,20 @@
 import React from "react";
 import { Box, Grid, Card, CardContent, Typography, Button } from "@mui/material";
+import { Check } from "@mui/icons-material";  // Alteração para o ícone de verificação
 import Slider from "react-slick"; // Importando o Slider
 
-// Importando o CSS do slick-carousel
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const AdditionalInfo: React.FC = () => {
-  // Configurações do Carrossel
   const settings = {
-    dots: false, // Desativa os indicadores de navegação
-    arrows: false, // Desativa as setas de navegação
-    infinite: true, // Habilita rotação infinita
-    speed: 500, // Tempo de transição entre as imagens
-    slidesToShow: 1, // Exibe uma imagem por vez
-    autoplay: true, // Ativa a troca automática
-    autoplaySpeed: 3000, // Define o intervalo de troca das imagens em milissegundos
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
   };
 
   return (
@@ -44,9 +43,10 @@ const AdditionalInfo: React.FC = () => {
               <Typography variant="h4" gutterBottom sx={{ fontWeight: "bold" }}>
                 O que é um galpão de lona?
               </Typography>
-              <Typography variant="body1" paragraph>
-                Um galpão de lona é uma estrutura versátil e econômica, ideal para armazenamento, proteção de equipamentos ou até mesmo como espaço de trabalho temporário. Ele é composto por uma estrutura metálica coberta por lonas de alta resistência, que oferecem durabilidade e proteção contra intempéries.
-              </Typography>
+              <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
+  Um galpão de lona é uma estrutura versátil e econômica, ideal para armazenamento, proteção de equipamentos ou até mesmo como espaço de trabalho temporário. Ele é composto por uma estrutura metálica coberta por lonas de alta resistência, que oferecem durabilidade e proteção contra intempéries.
+                </Typography>
+
             </CardContent>
           </Card>
 
@@ -93,86 +93,85 @@ const AdditionalInfo: React.FC = () => {
 
         {/* Coluna 2 - 40% de largura */}
         <Grid
-  item
-  xs={12}
-  md={5}
-  sx={{
-    marginTop: { xs: 0, md: "100px" }, // Adiciona margin-top somente em telas grandes
-  }}
->
-  <Typography
-    variant="h5" 
-    gutterBottom
-    sx={{
-      fontWeight: "bold",
-      color: "#fff",
-      fontSize: { xs: "1.5rem", md: "2rem" }, 
-    }}
-  >
-    Quais as vantagens?
-  </Typography>
+          item
+          xs={12}
+          md={5}
+          sx={{
+            marginTop: { xs: 0, md: "0" },
+          }}
+        >
+          <Typography
+            variant="h5"
+            gutterBottom
+            sx={{
+              fontWeight: "bold",
+              color: "#fff",
+              fontSize: { xs: "1.5rem", md: "2rem" },
+            }}
+          >
+            Quais as vantagens?
+          </Typography>
 
-  <Box
-  sx={{
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
-    padding: "20px",
-    borderRadius: "10px",
-    marginBottom: "20px",
-  }}
->
-  {[
-    "Lonas anti abrasivas de alta resistência com filtro UV",
-    "Assistência técnica preventiva e corretiva",
-    "Flexibilidade: Adaptam-se às necessidades específicas do seu negócio.",
-    "Custo-benefício: Menores custos de construção e manutenção.",
-    "Agilidade: Montagem rápida, reduzindo o tempo de implantação.",
-    "Escalabilidade: Fácil expansão ou redução de espaço.",
-    "Sustentabilidade: Materiais recicláveis alinhados ao conceito de economia circular.",
-  ].map((advantage, index) => (
-    <Typography
-      key={index}
-      variant="body2"
-      paragraph
-      sx={{
-        fontSize: { xs: "1rem", md: "1.2rem" },
-      }}
-    >
-      . {advantage} 
-    </Typography>
-  ))}
-</Box>
+          <Box
+            sx={{
+              backgroundColor: "transparent",
+              padding: "20px",
+              borderRadius: "10px",
+              marginBottom: "20px",
+            }}
+          >
+            {[
+              "Lonas anti abrasivas de alta resistência com filtro UV",
+              "Assistência técnica preventiva e corretiva",
+              "Flexibilidade: Adaptam-se às necessidades específicas do seu negócio.",
+              "Custo-benefício: Menores custos de construção e manutenção.",
+              "Agilidade: Montagem rápida, reduzindo o tempo de implantação.",
+              "Escalabilidade: Fácil expansão ou redução de espaço.",
+              "Sustentabilidade: Materiais recicláveis alinhados ao conceito de economia circular.",
+            ].map((advantage, index) => (
+              <Typography
+                key={index}
+                variant="body2"
+                paragraph
+                sx={{
+                  fontSize: { xs: "1rem", md: "1.2rem" },
+                  display: "flex",
+                  alignItems: "center", // Para alinhar o ícone com o texto
+                }}
+              >
+                <Check sx={{ color: "#4caf50", marginRight: "8px" }} />
+                {advantage}
+              </Typography>
+            ))}
+          </Box>
 
-
- {/* Botão de ação */}
-<Box
-  sx={{
-    display: { xs: "none", md: "flex" }, 
-    justifyContent: "flex-end",
-    width: "100%",
-    marginTop: { xs: "20px", md: "0" }, 
-  }}
->
-  <Button
-    variant="contained"
-    sx={{
-      backgroundColor: "#254B3A",
-      padding: "10px 20px",
-      borderRadius: "5px",
-      fontSize: "1.1rem",
-      "&:hover": {
-        backgroundColor: "#ffffff",
-        color: "#688198",
-      },
-    }}
-  >
-    Solicite seu orçamento
-  </Button>
-</Box>
-
-
-</Grid>
-
-
+          {/* Botão de ação */}
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              justifyContent: "flex-end",
+              width: "100%",
+              marginTop: { xs: "20px", md: "100PX" }, 
+              alignItems: { xs: "center", md: "flex-end" },
+            }}
+          >
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#254B3A",
+                padding: "10px 20px",
+                borderRadius: "5px",
+                fontSize: "1.1rem",
+                "&:hover": {
+                  backgroundColor: "#ffffff",
+                  color: "#688198",
+                },
+              }}
+            >
+              Solicite seu orçamento
+            </Button>
+          </Box>
+        </Grid>
       </Grid>
     </Box>
   );

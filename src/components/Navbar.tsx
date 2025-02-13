@@ -1,17 +1,36 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { AppBar, Toolbar, Box, Button, useMediaQuery } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 
 const Navbar: React.FC = () => {
   const theme = useTheme();
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md")); 
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("md"));
+  
+  const [showLogo, setShowLogo] = useState<boolean>(false);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", 
+      behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) { // Quando o usuário rolar para baixo
+        setShowLogo(true);
+      } else {
+        setShowLogo(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Limpeza do event listener ao desmontar o componente
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -25,20 +44,41 @@ const Navbar: React.FC = () => {
           zIndex: 9999,
           padding: "10px 0",
           backdropFilter: "blur(5px)",
+          display: "flex",
+          justifyContent: "center", // Centraliza os botões
         }}
       >
         <Toolbar
           sx={{
             flexDirection: "row",
-            justifyContent: "center",
+            justifyContent: "space-between", // Espaça os itens à esquerda e à direita
             alignItems: "center",
-            flexWrap: "nowrap",
+            width: "100%",
           }}
         >
+          {/* Logo visível apenas após rolar a página */}
+          {showLogo && (
+            <Box
+              sx={{
+                position: "absolute",
+                left: 16,
+                top: 10,
+                zIndex: 1000,
+              }}
+            >
+              <img
+                src={`${process.env.PUBLIC_URL}/imagens/logoMWM.png`} // Caminho correto para a imagem
+                alt="Logo"
+                style={{ height: isLargeScreen ? 60 : 30 }} // Altura da logo ajustada
+              />
+            </Box>
+          )}
+
+          {/* Navbar Links */}
           <Box
             sx={{
               display: "flex",
-              gap: isLargeScreen ? 8 : 2, 
+              gap: isLargeScreen ? 8 : 2,
               justifyContent: "center",
               width: "100%",
               position: "relative",
@@ -58,14 +98,14 @@ const Navbar: React.FC = () => {
                   fontSize: isLargeScreen ? "18px" : "14px",
                   fontWeight: "bold",
                   transition: "color 0.3s ease",
-                  minWidth: "auto", 
+                  minWidth: "auto",
                   padding: isLargeScreen ? "10px 16px" : "6px 10px",
                   "&:hover": {
                     backgroundColor: "#688198",
                     color: "#ffffff",
                   },
                 }}
-                onClick={text === "Home" ? scrollToTop : undefined} 
+                onClick={text === "Home" ? scrollToTop : undefined}
                 href={text === "Serviços" ? "#services" : text === "Contato" ? "#contact" : undefined}
               >
                 {text}
@@ -75,7 +115,7 @@ const Navbar: React.FC = () => {
         </Toolbar>
       </AppBar>
 
-      <Box sx={{ marginTop: "100px", }} />
+      <Box sx={{ marginTop: "100px" }} />
     </>
   );
 };

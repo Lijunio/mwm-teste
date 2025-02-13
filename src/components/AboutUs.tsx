@@ -16,7 +16,19 @@ const Faq: React.FC = () => {
   return (
     <Box sx={{ p: 4, fontFamily: "'Roboto', sans-serif" }}>
       {/* Título da seção */}
-      <Typography variant="h3" sx={{ fontWeight: "bold", textAlign: "left", color: "white", mb: 4 }}>
+      <Typography
+        variant="h3"
+        sx={{
+          fontWeight: "bold",
+          textAlign: "left",
+          color: "white",
+          mb: 4,
+          fontSize: {
+            xs: '1.5rem', 
+            sm: '3rem',  
+          },
+        }}
+      >
         Perguntas Frequentes
       </Typography>
 
@@ -25,32 +37,42 @@ const Faq: React.FC = () => {
         sx={{
           padding: 3,
           boxShadow: 3,
-          textAlign: "left", // Alinha o texto à esquerda
+          textAlign: "left",
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-start", // Alinha os itens à esquerda
+          alignItems: "flex-start",
           height: "100%",
           borderRadius: 4,
-          backgroundColor: "#222b32", // Cor de fundo
+          backgroundColor: "#222b32",
           color: "white",
-          mb: 4, // Espaço entre os cards
-          position: "relative", // Necessário para a posição absoluta da seta
+          mb: 4,
+          position: "relative",
         }}
       >
-        <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+        <Typography
+          variant="h5"
+          sx={{
+            fontWeight: "bold",
+            mb: 2,
+            fontSize: {
+              xs: '1rem', // Para telas pequenas, o tamanho do título da pergunta será 1rem
+              sm: '1.6rem'
+            },
+          }}
+        >
           1. Quais são as vantagens de usar lonas anti abrasivas com filtro UV em minhas estruturas?
         </Typography>
 
         {/* Setinha para expandir */}
-        <IconButton 
-          onClick={() => handleToggle(0)} 
+        <IconButton
+          onClick={() => handleToggle(0)}
           sx={{
-            color: "white", 
-            position: "absolute", 
-            right: 16, 
-            top: "50%", 
-            transform: "translateY(-50%)", 
-            fontSize: 30, // Aumentando o tamanho da seta
+            color: "white",
+            position: "absolute",
+            right: 16,
+            top: "50%",
+            transform: "translateY(-50%)",
+            fontSize: 30,
           }}
         >
           <ExpandMoreIcon />
@@ -58,17 +80,27 @@ const Faq: React.FC = () => {
 
         {/* Resposta */}
         {expanded[0] && (
-          <Typography sx={{ mt: 2 }}>
-            As lonas anti abrasivas com filtro UV oferecem diversas vantagens para suas estruturas, incluindo:
-            <br /><br />
-            <strong>Durabilidade:</strong> A alta resistência à abrasão garante maior vida útil à lona, reduzindo a necessidade de substituições frequentes.
-            <br /><br />
-            <strong>Proteção:</strong> O filtro UV protege contra os raios solares, prevenindo o desgaste da lona e dos materiais armazenados sob ela.
-            <br /><br />
-            <strong>Segurança:</strong> A resistência à abrasão e ao rasgo garante maior segurança para pessoas e bens.
-            <br /><br />
-            <strong>Economia:</strong> A durabilidade e a proteção UV reduzem custos de manutenção e substituição.
-          </Typography>
+          <Typography 
+          sx={{
+            mt: 2,
+            fontSize: {
+              xs: '0.875rem', // Tamanho menor em telas pequenas
+              sm: '1rem',     // Tamanho médio em telas médias
+              lg: '1.25rem',  // Tamanho maior em telas grandes
+            }
+          }}
+        >
+          As lonas anti abrasivas com filtro UV oferecem diversas vantagens para suas estruturas, incluindo:
+          <br /><br />
+          <strong>Durabilidade:</strong> A alta resistência à abrasão garante maior vida útil à lona, reduzindo a necessidade de substituições frequentes.
+          <br /><br />
+          <strong>Proteção:</strong> O filtro UV protege contra os raios solares, prevenindo o desgaste da lona e dos materiais armazenados sob ela.
+          <br /><br />
+          <strong>Segurança:</strong> A resistência à abrasão e ao rasgo garante maior segurança para pessoas e bens.
+          <br /><br />
+          <strong>Economia:</strong> A durabilidade e a proteção UV reduzem custos de manutenção e substituição.
+        </Typography>
+        
         )}
       </Card>
 
@@ -77,32 +109,42 @@ const Faq: React.FC = () => {
         sx={{
           padding: 3,
           boxShadow: 3,
-          textAlign: "left", // Alinha o texto à esquerda
+          textAlign: "left",
           display: "flex",
           flexDirection: "column",
-          alignItems: "flex-start", // Alinha os itens à esquerda
+          alignItems: "flex-start",
           height: "100%",
           borderRadius: 4,
-          backgroundColor: "#222b32", // Cor de fundo
+          backgroundColor: "#222b32",
           color: "white",
-          mb: 4, // Espaço entre os cards
-          position: "relative", // Necessário para a posição absoluta da seta
+          mb: 4,
+          position: "relative",
         }}
       >
-        <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2 }}>
+        <Typography
+          variant="h5"
+          sx={{
+            fontWeight: "bold",
+            mb: 2,
+            fontSize: {
+              xs: '1rem', 
+              sm: '1.6rem', 
+            },
+          }}
+        >
           2. Qual a vida útil esperada para uma lona anti abrasiva com filtro UV?
         </Typography>
 
         {/* Setinha para expandir */}
-        <IconButton 
-          onClick={() => handleToggle(1)} 
+        <IconButton
+          onClick={() => handleToggle(1)}
           sx={{
-            color: "white", 
-            position: "absolute", 
-            right: 16, 
-            top: "50%", 
-            transform: "translateY(-50%)", 
-            fontSize: 30, // Aumentando o tamanho da seta
+            color: "white",
+            position: "absolute",
+            right: 16,
+            top: "50%",
+            transform: "translateY(-50%)",
+            fontSize: 30,
           }}
         >
           <ExpandMoreIcon />
@@ -110,12 +152,20 @@ const Faq: React.FC = () => {
 
         {/* Resposta */}
         {expanded[1] && (
-          <Typography sx={{ mt: 2 }}>
+         <Typography 
+         sx={{
+           mt: 2,
+           fontSize: {
+             xs: '0.875rem', 
+             sm: '1rem',     
+             lg: '1.25rem',  
+           }
+         }}
+       >
             A vida útil de uma lona anti abrasiva com filtro UV pode variar de 5 a 10 anos, dependendo das condições de uso e manutenção. A proteção UV e a resistência à abrasão prolongam sua durabilidade, mas fatores como exposição intensa ao sol, vento e poluição podem afetar o tempo de vida útil.
           </Typography>
         )}
       </Card>
-
     </Box>
   );
 };
