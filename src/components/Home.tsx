@@ -32,19 +32,20 @@ const Home = () => {
 
   return (
     <Box 
-      sx={{
-        height: "80vh",
-        width: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: isSmallScreen ? "center" : "flex-start",
-        justifyContent: "flex-start",
-        background: `url(${process.env.PUBLIC_URL}/imagens/fundo.png) no-repeat right center`,
-        backgroundSize: "contain",
-        padding: isSmallScreen ? "16px" : "32px",
-        position: "relative",
-        overflow: "hidden", 
-      }}
+    sx={{
+      height: "80vh",
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: isSmallScreen ? "center" : "flex-start",
+      justifyContent: "flex-start",
+      background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${process.env.PUBLIC_URL}/imagens/fundo.png) no-repeat right center`,
+      backgroundSize: "contain",
+      padding: isSmallScreen ? "16px" : "32px",
+      position: "relative",
+      overflow: "hidden",
+    }}
+    
     >
       {/* Elemento 2: Logo + Texto */}
       <Box
@@ -151,21 +152,22 @@ const Home = () => {
         }}
       >
         <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "rgba(90, 90, 90, 0.8)", // Cinza com transparência
-            color: "white",
-            padding: "10px 20px",
-            fontSize: "1.2rem",
-            fontWeight: "bold",
-            "&:hover": {
-              backgroundColor: "rgba(128, 128, 128, 1)", // Fica 100% opaco ao passar o mouse
-            },
-          }}
-          onClick={() => window.open(whatsappLink, "_blank")}
-        >
-          Solicite seu orçamento
-        </Button>
+  variant="contained"
+  sx={{
+    backgroundColor: "rgba(0, 0, 0, 0.7)", // Preto com 70% de transparência
+    color: "white",
+    padding: "10px 20px",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    "&:hover": {
+      backgroundColor: "rgba(0, 0, 0, 1)", // Preto sólido no hover
+    },
+  }}
+  onClick={() => window.open(whatsappLink, "_blank")}
+>
+  Solicite seu orçamento
+</Button>
+
       </Box>
     </Box>
   );

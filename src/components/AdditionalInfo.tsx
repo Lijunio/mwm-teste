@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, Grid, Card, CardContent, Typography, Button } from "@mui/material";
 import { Check } from "@mui/icons-material";  // Alteração para o ícone de verificação
 import Slider from "react-slick"; // Importando o Slider
@@ -17,10 +17,13 @@ const AdditionalInfo: React.FC = () => {
     autoplaySpeed: 3000,
   };
 
-  const [message, setMessage] = useState<string>("");
+  const whatsappLink = `https://wa.me/5531991502088?text=${encodeURIComponent(
+    "Olá! Estava visitando seu site e gostaria de saber mais sobre os galpões de lona que vocês oferecem. Poderiam fornecer mais detalhes sobre os serviços, como custos e prazos de montagem? Ficaria muito grato pela ajuda!"
+  )}`;
 
   const handleButtonClick = () => {
-    setMessage("Olá! Estava visitando seu site e gostaria de saber mais sobre os galpões de lona que vocês oferecem. Poderiam fornecer mais detalhes sobre os serviços, como custos e prazos de montagem? Ficaria muito grato pela ajuda!");
+    // Aqui, ao invés de criar uma URL novamente, usamos a variável whatsappLink
+    window.open(whatsappLink, "_blank");
   };
 
   return (
@@ -156,7 +159,7 @@ const AdditionalInfo: React.FC = () => {
               display: { xs: "none", md: "flex" },
               justifyContent: "flex-end",
               width: "100%",
-              marginTop: { xs: "20px", md: "100PX" }, 
+              marginTop: { xs: "20px", md: "100PX" },
               alignItems: { xs: "center", md: "flex-end" },
             }}
           >
@@ -177,13 +180,6 @@ const AdditionalInfo: React.FC = () => {
               Solicite seu orçamento
             </Button>
           </Box>
-
-          {/* Exibindo a mensagem após clicar no botão */}
-          {message && (
-            <Box sx={{ marginTop: "20px", color: "#fff", fontSize: "1.2rem" }}>
-              <Typography variant="body1">{message}</Typography>
-            </Box>
-          )}
         </Grid>
       </Grid>
     </Box>

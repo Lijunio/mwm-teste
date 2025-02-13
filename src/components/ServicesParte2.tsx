@@ -5,9 +5,9 @@ const Services: React.FC = () => {
   // Função para gerar o link do WhatsApp com a mensagem personalizada
   const handleBudgetRequest = (serviceName: string) => {
     const whatsappLink = `https://wa.me/5531991502088?text=${encodeURIComponent(
-      `Olá, queria saber mais informações a respeito de ${serviceName}`
+      `Olá, queria saber mais informações a respeito de ${serviceName}.`
     )}`;
-    window.open(whatsappLink, "_blank"); // Abre o link do WhatsApp em uma nova aba
+    window.open(whatsappLink, "_blank"); 
   };
 
   return (
