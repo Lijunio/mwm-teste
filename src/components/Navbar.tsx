@@ -51,9 +51,10 @@ const Navbar: React.FC = () => {
         <Toolbar
           sx={{
             flexDirection: "row",
-            justifyContent: "space-between", // Espaça os itens à esquerda e à direita
+            justifyContent: isLargeScreen ? "space-between" : "flex-start", // Para telas pequenas alinha à esquerda
             alignItems: "center",
             width: "100%",
+            padding: isLargeScreen ? "0 16px" : "0 8px", // Ajusta o padding em telas pequenas
           }}
         >
           {/* Logo visível apenas após rolar a página */}
@@ -84,9 +85,8 @@ const Navbar: React.FC = () => {
               position: "relative",
               zIndex: 1000,
               transition: "transform 0.3s ease",
-              "&:hover": {
-                transform: "scale(1.05)",
-              },
+              flexWrap: "wrap", // Permite quebra de linha em telas pequenas
+              marginLeft: isLargeScreen ? "auto" : "60px", // Ajusta o espaçamento para telas pequenas
             }}
           >
             {["Home", "Serviços", "Contato"].map((text, index) => (
