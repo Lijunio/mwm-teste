@@ -10,7 +10,13 @@ const Contact: React.FC = () => {
 
   return (
     <Box sx={{ color: "white", textAlign: "center", p: 4 }}>
-      <Typography variant="h4" gutterBottom>
+      <Typography
+        variant="h3"
+        gutterBottom
+        sx={{
+          fontSize: { xs: "1.6rem", sm: "2rem", md: "3rem" }, // Ajusta o tamanho do título
+        }}
+      >
         Contato
       </Typography>
       <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 2, mt: 4 }}>
@@ -21,6 +27,7 @@ const Contact: React.FC = () => {
             border: "1px solid white",
             borderRadius: 2,
             padding: "10px 20px",
+            fontSize: { xs: "0.5rem", sm: "1rem" }, // Ajusta o tamanho da fonte no botão
             "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
           }}
         >
@@ -37,6 +44,7 @@ const Contact: React.FC = () => {
             border: "1px solid white",
             borderRadius: 2,
             padding: "10px 20px",
+            fontSize: { xs: "0.5rem", sm: "1rem" }, // Ajusta o tamanho da fonte no botão
             "&:hover": { backgroundColor: "rgba(255, 255, 255, 0.2)" },
           }}
         >

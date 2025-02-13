@@ -2,9 +2,12 @@ import React from "react";
 import { Box, Card, Typography, Button, Grid } from "@mui/material";
 
 const Services: React.FC = () => {
-  // Função para simular a requisição de orçamento
+  // Função para gerar o link do WhatsApp com a mensagem personalizada
   const handleBudgetRequest = (serviceName: string) => {
-    console.log(`Orçamento solicitado para: ${serviceName}`);
+    const whatsappLink = `https://wa.me/5531991502088?text=${encodeURIComponent(
+      `Olá, queria saber mais informações a respeito de ${serviceName}`
+    )}`;
+    window.open(whatsappLink, "_blank"); // Abre o link do WhatsApp em uma nova aba
   };
 
   return (
@@ -27,25 +30,38 @@ const Services: React.FC = () => {
               color: "white",
             }}
           >
-            <Typography variant="h3" sx={{ fontWeight: "bold", mb: 2 }}>
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: "bold",
+                mb: 2,
+                fontSize: { xs: "1.5rem", sm: "1.875rem", md: "2rem" },
+              }}
+            >
               Galpão Lonado
             </Typography>
-            <Typography sx={{ mb: 3, lineHeight: 1.5 }}>
+            <Typography
+              sx={{
+                mb: 3,
+                lineHeight: 1.5,
+                fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" },
+              }}
+            >
               Coberturas de aço carbono e alumínio, com lonas resistentes ou telhas galvanizadas. Ideais para obras, oficinas e armazenagem, oferecendo montagem personalizada e redução de custos.
             </Typography>
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "#222b32",
                 opacity: 0.97,
                 color: "#ffffff",
                 fontWeight: "bold",
+                backgroundColor: "#254B3A",
                 "&:hover": {
-                  backgroundColor: "#688198",
-                  color: "#ffffff",
+                  backgroundColor: "#ffffff",
+                  color: "#688198",
                 },
               }}
-              onClick={() => handleBudgetRequest("Galpão Lonado e Zinco")}
+              onClick={() => handleBudgetRequest("Galpão Lonado")}
             >
               Orçamento
             </Button>
@@ -68,22 +84,35 @@ const Services: React.FC = () => {
               color: "white",
             }}
           >
-            <Typography variant="h3" sx={{ fontWeight: "bold", mb: 2 }}>
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: "bold",
+                mb: 2,
+                fontSize: { xs: "1.5rem", sm: "1.875rem", md: "2rem" },
+              }}
+            >
               Tenda Carpa
             </Typography>
-            <Typography sx={{ mb: 3, lineHeight: 1.5 }}>
+            <Typography
+              sx={{
+                mb: 3,
+                lineHeight: 1.5,
+                fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" },
+              }}
+            >
               Estrutura de alumínio e aço carbono, com segurança e flexibilidade. Ideal para escritórios, refeitórios e vestuários, atendendo a diferentes demandas com soluções personalizadas.
             </Typography>
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "#222b32",
                 opacity: 0.97,
                 color: "#ffffff",
                 fontWeight: "bold",
+                backgroundColor: "#254B3A",
                 "&:hover": {
-                  backgroundColor: "#688198",
-                  color: "#ffffff",
+                  backgroundColor: "#ffffff",
+                  color: "#688198",
                 },
               }}
               onClick={() => handleBudgetRequest("Tenda Carpa")}
@@ -109,22 +138,35 @@ const Services: React.FC = () => {
               color: "white",
             }}
           >
-            <Typography variant="h3" sx={{ fontWeight: "bold", mb: 2 }}>
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: "bold",
+                mb: 2,
+                fontSize: { xs: "1.5rem", sm: "1.875rem", md: "2rem" },
+              }}
+            >
               Lonas Sob Medida
             </Typography>
-            <Typography sx={{ mb: 3, lineHeight: 1.5 }}>
+            <Typography
+              sx={{
+                mb: 3,
+                lineHeight: 1.5,
+                fontSize: { xs: "0.875rem", sm: "1rem", md: "1.125rem" },
+              }}
+            >
               Lonas personalizadas com alta qualidade e garantia, atendendo diversas necessidades e trabalhando com as melhores marcas do mercado, garantindo durabilidade e eficiência.
             </Typography>
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "#222b32",
                 opacity: 0.97,
                 color: "#ffffff",
                 fontWeight: "bold",
+                backgroundColor: "#254B3A",
                 "&:hover": {
-                  backgroundColor: "#688198",
-                  color: "#ffffff",
+                  backgroundColor: "#ffffff",
+                  color: "#688198",
                 },
               }}
               onClick={() => handleBudgetRequest("Lonas Sob Medida")}

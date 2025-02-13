@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Grid, Card, CardContent, Typography, Button } from "@mui/material";
 import { Check } from "@mui/icons-material";  // Alteração para o ícone de verificação
 import Slider from "react-slick"; // Importando o Slider
@@ -15,6 +15,12 @@ const AdditionalInfo: React.FC = () => {
     slidesToShow: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+  };
+
+  const [message, setMessage] = useState<string>("");
+
+  const handleButtonClick = () => {
+    setMessage("Olá! Estava visitando seu site e gostaria de saber mais sobre os galpões de lona que vocês oferecem. Poderiam fornecer mais detalhes sobre os serviços, como custos e prazos de montagem? Ficaria muito grato pela ajuda!");
   };
 
   return (
@@ -44,9 +50,8 @@ const AdditionalInfo: React.FC = () => {
                 O que é um galpão de lona?
               </Typography>
               <Typography variant="body1" paragraph sx={{ lineHeight: 1.8 }}>
-  Um galpão de lona é uma estrutura versátil e econômica, ideal para armazenamento, proteção de equipamentos ou até mesmo como espaço de trabalho temporário. Ele é composto por uma estrutura metálica coberta por lonas de alta resistência, que oferecem durabilidade e proteção contra intempéries.
-                </Typography>
-
+                Um galpão de lona é uma estrutura versátil e econômica, ideal para armazenamento, proteção de equipamentos ou até mesmo como espaço de trabalho temporário. Ele é composto por uma estrutura metálica coberta por lonas de alta resistência, que oferecem durabilidade e proteção contra intempéries.
+              </Typography>
             </CardContent>
           </Card>
 
@@ -158,19 +163,27 @@ const AdditionalInfo: React.FC = () => {
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "#254B3A",
                 padding: "10px 20px",
                 borderRadius: "5px",
                 fontSize: "1.1rem",
+                backgroundColor: "#254B3A",
                 "&:hover": {
                   backgroundColor: "#ffffff",
                   color: "#688198",
                 },
               }}
+              onClick={handleButtonClick}
             >
               Solicite seu orçamento
             </Button>
           </Box>
+
+          {/* Exibindo a mensagem após clicar no botão */}
+          {message && (
+            <Box sx={{ marginTop: "20px", color: "#fff", fontSize: "1.2rem" }}>
+              <Typography variant="body1">{message}</Typography>
+            </Box>
+          )}
         </Grid>
       </Grid>
     </Box>
