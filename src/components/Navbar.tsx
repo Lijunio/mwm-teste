@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) { // Quando o usuário rolar para baixo
+      if (window.scrollY > 50) { 
         setShowLogo(true);
       } else {
         setShowLogo(false);
@@ -26,7 +26,6 @@ const Navbar: React.FC = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Limpeza do event listener ao desmontar o componente
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -45,16 +44,16 @@ const Navbar: React.FC = () => {
           padding: "10px 0",
           backdropFilter: "blur(5px)",
           display: "flex",
-          justifyContent: "center", // Centraliza os botões
+          justifyContent: "center", 
         }}
       >
         <Toolbar
           sx={{
             flexDirection: "row",
-            justifyContent: isLargeScreen ? "space-between" : "flex-start", // Para telas pequenas alinha à esquerda
+            justifyContent: isLargeScreen ? "space-between" : "flex-start", 
             alignItems: "center",
             width: "100%",
-            padding: isLargeScreen ? "0 16px" : "0 8px", // Ajusta o padding em telas pequenas
+            padding: isLargeScreen ? "0 16px" : "0 8px", 
           }}
         >
           {/* Logo visível apenas após rolar a página */}
@@ -68,9 +67,9 @@ const Navbar: React.FC = () => {
               }}
             >
               <img
-                src={`${process.env.PUBLIC_URL}/imagens/logoMWM.png`} // Caminho correto para a imagem
+                src={`${process.env.PUBLIC_URL}/imagens/logoMWM.png`} 
                 alt="Logo"
-                style={{ height: isLargeScreen ? 60 : 30 }} // Altura da logo ajustada
+                style={{ height: isLargeScreen ? 60 : 30 }} 
               />
             </Box>
           )}
@@ -85,8 +84,8 @@ const Navbar: React.FC = () => {
               position: "relative",
               zIndex: 1000,
               transition: "transform 0.3s ease",
-              flexWrap: "wrap", // Permite quebra de linha em telas pequenas
-              marginLeft: isLargeScreen ? "auto" : "60px", // Ajusta o espaçamento para telas pequenas
+              flexWrap: "wrap", 
+              marginLeft: isLargeScreen ? "auto" : "60px", 
             }}
           >
             {["Home", "Serviços", "Contato"].map((text, index) => (

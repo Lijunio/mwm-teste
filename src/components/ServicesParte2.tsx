@@ -18,7 +18,7 @@ const Services: React.FC = () => {
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
-              padding: 4, // Aumentado o padding para aumentar o tamanho do card
+              padding: 4, 
               boxShadow: 3,
               textAlign: "center",
               display: "flex",
@@ -71,7 +71,7 @@ const Services: React.FC = () => {
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
-              padding: 4, // Aumentado o padding para aumentar o tamanho do card
+              padding: 4, 
               boxShadow: 3,
               textAlign: "center",
               display: "flex",
@@ -124,7 +124,7 @@ const Services: React.FC = () => {
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
-              padding: 4, // Aumentado o padding para aumentar o tamanho do card
+              padding: 4, 
               boxShadow: 3,
               textAlign: "center",
               display: "flex",

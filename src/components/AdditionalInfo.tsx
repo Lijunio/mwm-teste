@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, Card, CardContent, Typography, Button } from "@mui/material";
-import { Check } from "@mui/icons-material";  // Alteração para o ícone de verificação
-import Slider from "react-slick"; // Importando o Slider
+import { Check } from "@mui/icons-material";  
+import Slider from "react-slick"; 
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -37,9 +37,9 @@ const AdditionalInfo: React.FC = () => {
           justifyContent: "center",
         }}
       >
-        {/* Coluna 1 - 60% de largura */}
+        {/* coluna 1 - 60% de largura */}
         <Grid item xs={12} md={7}>
-          {/* Card com o carrossel de imagens */}
+          {/* Card com o carrossel  */}
           <Card
             sx={{
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
@@ -58,7 +58,7 @@ const AdditionalInfo: React.FC = () => {
             </CardContent>
           </Card>
 
-          {/* Carrossel com as duas imagens */}
+          {/* carrossel */}
           <Slider {...settings}>
             <Box
               sx={{
@@ -144,7 +144,7 @@ const AdditionalInfo: React.FC = () => {
                 sx={{
                   fontSize: { xs: "1rem", md: "1.2rem" },
                   display: "flex",
-                  alignItems: "center", // Para alinhar o ícone com o texto
+                  alignItems: "center", 
                 }}
               >
                 <Check sx={{ color: "#4caf50", marginRight: "8px" }} />

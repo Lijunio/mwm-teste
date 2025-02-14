@@ -55,7 +55,7 @@ const Home = () => {
           zIndex: 2, 
           width: "100%", 
           maxWidth: "600px", 
-          marginTop: isSmallScreen ? "-20px" : "20px", // telas pequenas
+          marginTop: isSmallScreen ? "-20px" : "20px", 
           marginLeft: isSmallScreen ? "0px" : "250px",
         }}
       >
@@ -96,7 +96,7 @@ const Home = () => {
           width: "100%",
           maxWidth: "600px",
           border: "none",
-          marginTop: isSmallScreen ? "30px" : "40px", // telas pequenas
+          marginTop: isSmallScreen ? "30px" : "40px",
           marginLeft: isSmallScreen ? "0px" : "200px",
         }}
       >

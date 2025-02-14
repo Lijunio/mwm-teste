@@ -55,7 +55,7 @@ const Faq: React.FC = () => {
             fontWeight: "bold",
             mb: 2,
             fontSize: {
-              xs: '1rem', // Para telas pequenas, o tamanho do título da pergunta será 1rem
+              xs: '1rem', 
               sm: '1.6rem'
             },
           }}
@@ -84,9 +84,9 @@ const Faq: React.FC = () => {
           sx={{
             mt: 2,
             fontSize: {
-              xs: '0.875rem', // Tamanho menor em telas pequenas
-              sm: '1rem',     // Tamanho médio em telas médias
-              lg: '1.25rem',  // Tamanho maior em telas grandes
+              xs: '0.875rem', 
+              sm: '1rem',     
+              lg: '1.25rem',  
             }
           }}
         >

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Card, CardContent, Typography, Button, Grid } from "@mui/material"; // Adicionado Button
+import { Box, Card, CardContent, Typography, Button, Grid } from "@mui/material"; 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { Carousel } from "react-responsive-carousel";
