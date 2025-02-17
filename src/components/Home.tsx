@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Card, CardContent, Button, useMediaQuery } from "@mui/material"; 
+import { Box, Typography, Card, CardContent, useMediaQuery } from "@mui/material"; 
 import { useTheme } from "@mui/material/styles";
 
 const Home = () => {
@@ -26,26 +26,21 @@ const Home = () => {
     return () => clearTimeout(timeout);
   }, [textIndex, isTextCompleted]);
 
-  const whatsappLink = `https://wa.me/5531991502088?text=${encodeURIComponent(
-    "Olá! Estava visitando seu site e gostaria de saber mais sobre os serviços oferecidos pela MWM Engenharia para avaliar como podemos trabalhar juntos. Poderia me ajudar com mais informações?"
-  )}`;
-
   return (
     <Box 
-    sx={{
-      height: "80vh",
-      width: "100%",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: isSmallScreen ? "center" : "flex-start",
-      justifyContent: "flex-start",
-      background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${process.env.PUBLIC_URL}/imagens/fundo.png) no-repeat right center`,
-      backgroundSize: "contain",
-      padding: isSmallScreen ? "16px" : "32px",
-      position: "relative",
-      overflow: "hidden",
-    }}
-    
+      sx={{
+        height: "80vh",
+        width: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: isSmallScreen ? "center" : "flex-start",
+        justifyContent: "flex-start",
+        background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${process.env.PUBLIC_URL}/imagens/fundo.png) no-repeat right center`,
+        backgroundSize: "contain",
+        padding: isSmallScreen ? "16px" : "32px",
+        position: "relative",
+        overflow: "hidden",
+      }}
     >
       {/* Elemento 2: Logo + Texto */}
       <Box
@@ -140,35 +135,6 @@ const Home = () => {
           </ul>
         </CardContent>
       </Card>
-
-      {/* Elemento 4: Botão */}
-      <Box
-        sx={{
-          width: "100%",
-          display: "flex",
-          justifyContent: isSmallScreen ? "center" : "flex-start",
-          marginTop: isSmallScreen ? "30px" : "40px",
-          marginLeft: isSmallScreen ? "0px" : "650px",
-        }}
-      >
-        <Button
-  variant="contained"
-  sx={{
-    color: "white",
-    padding: "10px 20px",
-    fontSize: "1.2rem",
-    fontWeight: "bold",
-    backgroundColor: "rgb(170, 118, 35)", 
-    "&:hover": {
-      backgroundColor: "rgb(170, 118, 35, 0.7)", 
-    },
-  }}
-  onClick={() => window.open(whatsappLink, "_blank")}
->
-  Solicite seu orçamento
-</Button>
-
-      </Box>
     </Box>
   );
 };

@@ -1,12 +1,5 @@
 import React from "react";
-import { Box, Card, Typography, Grid, keyframes } from "@mui/material";
-
-// Definição da animação para mudar o gradiente
-const gradientAnimation = keyframes`
-  0% { background: linear-gradient(45deg, #aa7623, #ffffff); }
-  50% { background: linear-gradient(45deg, #ffffff, #aa7623); }
-  100% { background: linear-gradient(45deg, #aa7623, #ffffff); }
-`;
+import { Box, Card, Typography, Grid } from "@mui/material";
 
 const Services: React.FC = () => {
   return (
@@ -17,7 +10,7 @@ const Services: React.FC = () => {
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
-              padding: 4,
+              padding: 4, 
               boxShadow: 3,
               textAlign: "center",
               display: "flex",
@@ -25,8 +18,8 @@ const Services: React.FC = () => {
               alignItems: "center",
               height: "100%",
               borderRadius: 4,
-              color: "black",
-              animation: `${gradientAnimation} 6s infinite alternate`,
+              backgroundColor: "rgba(151, 160, 152, 0.3)",
+              color: "white",
             }}
           >
             <Typography
@@ -51,11 +44,11 @@ const Services: React.FC = () => {
           </Card>
         </Grid>
 
-        {/* Card 2: Tenda Carpa */}
+        {/* Card 3: Tenda Carpa */}
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
-              padding: 4,
+              padding: 4, 
               boxShadow: 3,
               textAlign: "center",
               display: "flex",
@@ -63,8 +56,8 @@ const Services: React.FC = () => {
               alignItems: "center",
               height: "100%",
               borderRadius: 4,
-              color: "black",
-              animation: `${gradientAnimation} 6s infinite alternate`,
+              backgroundColor: "rgba(151, 160, 152, 0.3)",
+              color: "white",
             }}
           >
             <Typography
@@ -89,11 +82,11 @@ const Services: React.FC = () => {
           </Card>
         </Grid>
 
-        {/* Card 3: Lonas Sob Medida */}
+        {/* Card 4: Lonas Sob Medida */}
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
-              padding: 4,
+              padding: 4, 
               boxShadow: 3,
               textAlign: "center",
               display: "flex",
@@ -101,8 +94,8 @@ const Services: React.FC = () => {
               alignItems: "center",
               height: "100%",
               borderRadius: 4,
-              color: "black",
-              animation: `${gradientAnimation} 6s infinite alternate`,
+              backgroundColor: "rgba(151, 160, 152, 0.3)",
+              color: "white",
             }}
           >
             <Typography

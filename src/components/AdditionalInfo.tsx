@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Card, CardContent, Typography, Button } from "@mui/material";
+import { Box, Grid, Card, CardContent, Typography } from "@mui/material";
 import { Check } from "@mui/icons-material";  
 import Slider from "react-slick"; 
 
@@ -18,12 +18,8 @@ const AdditionalInfo: React.FC = () => {
   };
 
   const whatsappLink = `https://wa.me/5531991502088?text=${encodeURIComponent(
-    "Olá! Estava visitando seu site e gostaria de saber mais sobre os galpões de lona que vocês oferecem. Poderiam fornecer mais detalhes sobre os serviços, como custos e prazos de montagem? Ficaria muito grato pela ajuda!"
+    "Olá! Estava visitando seu site e gostaria de saber mais sobre os serviços oferecidos pela MWM Engenharia para avaliar como podemos trabalhar juntos. Poderia me ajudar com mais informações?"
   )}`;
-
-  const handleButtonClick = () => {
-    window.open(whatsappLink, "_blank");
-  };
 
   return (
     <Box sx={{ padding: "40px", backgroundColor: "transparent", color: "#fff" }}>
@@ -149,32 +145,6 @@ const AdditionalInfo: React.FC = () => {
                 {advantage}
               </Typography>
             ))}
-          </Box>
-
-          <Box
-            sx={{
-              display: { xs: "none", md: "flex" },
-              justifyContent: "flex-end",
-              width: "100%",
-              marginTop: { xs: "20px", md: "100PX" },
-              alignItems: { xs: "center", md: "flex-end" },
-            }}
-          >
-            <Button
-              variant="contained"
-              sx={{
-                padding: "10px 20px",
-                borderRadius: "5px",
-                fontSize: "1.1rem",
-                backgroundColor: "rgb(170, 118, 35)", 
-    "&:hover": {
-      backgroundColor: "rgb(170, 118, 35, 0.7)", 
-    },
-              }}
-              onClick={handleButtonClick}
-            >
-              Solicite seu orçamento
-            </Button>
           </Box>
         </Grid>
       </Grid>
