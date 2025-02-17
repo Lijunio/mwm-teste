@@ -113,7 +113,7 @@ const Home = () => {
               marginBottom: "20px",  
             }}
           >
-            Na MWM Engenharia, somos especialistas em fabricação, venda e locação de:
+            Somos especialistas em fabricação, venda e locação de:
           </Typography>
           <ul style={{ 
             listStyleType: "disc",  
