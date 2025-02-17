@@ -36,13 +36,14 @@ const Navbar: React.FC = () => {
       <AppBar
         position="fixed"
         sx={{
-          backgroundColor: "rgba(34, 43, 50, 0.4)",
+          backgroundColor: showLogo ? "rgba(34, 43, 50, 0.4)" : "rgb(170, 118, 35, 0.7)",
           boxShadow: "none",
           width: "100%",
           top: 0,
           zIndex: 9999,
           padding: "10px 0",
           backdropFilter: "blur(5px)",
+          transition: "background-color 0.3s ease-in-out",
           display: "flex",
           justifyContent: "center", 
         }}
@@ -56,7 +57,7 @@ const Navbar: React.FC = () => {
             padding: isLargeScreen ? "0 16px" : "0 8px", 
           }}
         >
-          {/* Logo visível apenas após rolar a página */}
+
           {showLogo && (
             <Box
               sx={{
@@ -74,7 +75,6 @@ const Navbar: React.FC = () => {
             </Box>
           )}
 
-          {/* Navbar Links */}
           <Box
             sx={{
               display: "flex",

@@ -22,7 +22,6 @@ const AdditionalInfo: React.FC = () => {
   )}`;
 
   const handleButtonClick = () => {
-    // Aqui, ao invés de criar uma URL novamente, usamos a variável whatsappLink
     window.open(whatsappLink, "_blank");
   };
 
@@ -39,7 +38,6 @@ const AdditionalInfo: React.FC = () => {
       >
         {/* coluna 1 - 60% de largura */}
         <Grid item xs={12} md={7}>
-          {/* Card com o carrossel  */}
           <Card
             sx={{
               boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
@@ -99,7 +97,7 @@ const AdditionalInfo: React.FC = () => {
           </Slider>
         </Grid>
 
-        {/* Coluna 2 - 40% de largura */}
+        {/* 40% de largura */}
         <Grid
           item
           xs={12}
@@ -153,7 +151,6 @@ const AdditionalInfo: React.FC = () => {
             ))}
           </Box>
 
-          {/* Botão de ação */}
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
@@ -169,9 +166,9 @@ const AdditionalInfo: React.FC = () => {
                 padding: "10px 20px",
                 borderRadius: "5px",
                 fontSize: "1.1rem",
-                backgroundColor: "rgba(0, 0, 0, 0.7)", 
+                backgroundColor: "rgb(170, 118, 35)", 
     "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 1)", 
+      backgroundColor: "rgb(170, 118, 35, 0.7)", 
     },
               }}
               onClick={handleButtonClick}

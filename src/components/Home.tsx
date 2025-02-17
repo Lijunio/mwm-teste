@@ -158,9 +158,9 @@ const Home = () => {
     padding: "10px 20px",
     fontSize: "1.2rem",
     fontWeight: "bold",
-    backgroundColor: "rgba(0, 0, 0, 0.7)", 
+    backgroundColor: "rgb(170, 118, 35)", 
     "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 1)", 
+      backgroundColor: "rgb(170, 118, 35, 0.7)", 
     },
   }}
   onClick={() => window.open(whatsappLink, "_blank")}

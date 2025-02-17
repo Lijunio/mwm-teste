@@ -1,15 +1,14 @@
 import React from "react";
-import { Box, Card, Typography, Button, Grid } from "@mui/material";
+import { Box, Card, Typography, Grid, keyframes } from "@mui/material";
+
+// Definição da animação para mudar o gradiente
+const gradientAnimation = keyframes`
+  0% { background: linear-gradient(45deg, #aa7623, #ffffff); }
+  50% { background: linear-gradient(45deg, #ffffff, #aa7623); }
+  100% { background: linear-gradient(45deg, #aa7623, #ffffff); }
+`;
 
 const Services: React.FC = () => {
-  // Função para gerar o link do WhatsApp com a mensagem personalizada
-  const handleBudgetRequest = (serviceName: string) => {
-    const whatsappLink = `https://wa.me/5531991502088?text=${encodeURIComponent(
-      `Olá, queria saber mais informações a respeito de ${serviceName}.`
-    )}`;
-    window.open(whatsappLink, "_blank"); 
-  };
-
   return (
     <Box sx={{ p: 4, fontFamily: "'Roboto', sans-serif" }}>
       {/* Cards de Serviços */}
@@ -18,7 +17,7 @@ const Services: React.FC = () => {
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
-              padding: 4, 
+              padding: 4,
               boxShadow: 3,
               textAlign: "center",
               display: "flex",
@@ -26,8 +25,8 @@ const Services: React.FC = () => {
               alignItems: "center",
               height: "100%",
               borderRadius: 4,
-              backgroundColor: "rgba(151, 160, 152, 0.3)",
-              color: "white",
+              color: "black",
+              animation: `${gradientAnimation} 6s infinite alternate`,
             }}
           >
             <Typography
@@ -49,29 +48,14 @@ const Services: React.FC = () => {
             >
               Coberturas de aço carbono e alumínio, com lonas resistentes ou telhas galvanizadas. Ideais para obras, oficinas e armazenagem, oferecendo montagem personalizada e redução de custos.
             </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                opacity: 0.97,
-                color: "#ffffff",
-                fontWeight: "bold",
-                backgroundColor: "rgba(0, 0, 0, 0.7)", 
-    "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 1)", 
-    },
-              }}
-              onClick={() => handleBudgetRequest("Galpão Lonado")}
-            >
-              Orçamento
-            </Button>
           </Card>
         </Grid>
 
-        {/* Card 3: Tenda Carpa */}
+        {/* Card 2: Tenda Carpa */}
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
-              padding: 4, 
+              padding: 4,
               boxShadow: 3,
               textAlign: "center",
               display: "flex",
@@ -79,8 +63,8 @@ const Services: React.FC = () => {
               alignItems: "center",
               height: "100%",
               borderRadius: 4,
-              backgroundColor: "rgba(151, 160, 152, 0.3)",
-              color: "white",
+              color: "black",
+              animation: `${gradientAnimation} 6s infinite alternate`,
             }}
           >
             <Typography
@@ -102,29 +86,14 @@ const Services: React.FC = () => {
             >
               Estrutura de alumínio e aço carbono, com segurança e flexibilidade. Ideal para escritórios, refeitórios e vestuários, atendendo a diferentes demandas com soluções personalizadas.
             </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                opacity: 0.97,
-                color: "#ffffff",
-                fontWeight: "bold",
-                backgroundColor: "rgba(0, 0, 0, 0.7)", 
-    "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 1)", 
-    },
-              }}
-              onClick={() => handleBudgetRequest("Tenda Carpa")}
-            >
-              Orçamento
-            </Button>
           </Card>
         </Grid>
 
-        {/* Card 4: Lonas Sob Medida */}
+        {/* Card 3: Lonas Sob Medida */}
         <Grid item xs={12} sm={6} md={4}>
           <Card
             sx={{
-              padding: 4, 
+              padding: 4,
               boxShadow: 3,
               textAlign: "center",
               display: "flex",
@@ -132,8 +101,8 @@ const Services: React.FC = () => {
               alignItems: "center",
               height: "100%",
               borderRadius: 4,
-              backgroundColor: "rgba(151, 160, 152, 0.3)",
-              color: "white",
+              color: "black",
+              animation: `${gradientAnimation} 6s infinite alternate`,
             }}
           >
             <Typography
@@ -155,21 +124,6 @@ const Services: React.FC = () => {
             >
               Lonas personalizadas com alta qualidade e garantia, atendendo diversas necessidades e trabalhando com as melhores marcas do mercado, garantindo durabilidade e eficiência.
             </Typography>
-            <Button
-              variant="contained"
-              sx={{
-                opacity: 0.97,
-                color: "#ffffff",
-                fontWeight: "bold",
-                backgroundColor: "rgba(0, 0, 0, 0.7)", 
-    "&:hover": {
-      backgroundColor: "rgba(0, 0, 0, 1)", 
-    },
-              }}
-              onClick={() => handleBudgetRequest("Lonas Sob Medida")}
-            >
-              Orçamento
-            </Button>
           </Card>
         </Grid>
       </Grid>

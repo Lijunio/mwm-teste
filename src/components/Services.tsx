@@ -91,7 +91,7 @@ const Services: React.FC = () => {
             paragraph
             sx={{ lineHeight: 1.6, fontSize: { xs: "0.9rem", sm: "1.2rem" } }}
           >
-            Sua equipe já está em campo? Economize com a Locação Simples!
+            Economize com a Locação Simples!
           </Typography>
           <Typography
             variant="body1"
@@ -114,7 +114,7 @@ const Services: React.FC = () => {
               Nós entregamos os equipamentos diretamente no local da obra.
             </li>
             <li style={{ fontSize: "1rem", lineHeight: "1.6", marginBottom: "8px" }}>
-              Sua equipe realiza a montagem de forma rápida e eficiente.
+              Fazemos a montagem de forma rápida e eficiente.
             </li>
           </ul>
 
@@ -133,26 +133,6 @@ const Services: React.FC = () => {
                 </Typography>
               </Box>
             ))}
-          </Box>
-
-          {/* Botão para enviar mensagem no WhatsApp */}
-          <Box sx={{ display: { xs: "none", md: "flex" }, justifyContent: "flex-end", marginTop: "-50px" }}>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "rgba(0, 0, 0, 0.7)", 
-                color: "white",
-                padding: "10px 20px",
-                fontSize: "1.2rem",
-                fontWeight: "bold",
-                "&:hover": {
-                  backgroundColor: "rgba(0, 0, 0, 1)", 
-                },
-              }}
-              onClick={() => window.open(whatsappLink, "_blank")}
-            >
-              Solicite seu orçamento
-            </Button>
           </Box>
         </CardContent>
       </Card>
