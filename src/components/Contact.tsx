@@ -72,10 +72,10 @@ const Contact: React.FC = () => {
   }}
 >
   <img
+    className="logo"  // Adicionei uma classe CSS para a imagem
     src={`${process.env.PUBLIC_URL}/imagens/elias.png`} 
     alt="Logo Elias"
     style={{
-      width: "60px", 
       height: "auto",
       marginRight: "10px",
       maxWidth: "100%" 
@@ -85,7 +85,6 @@ const Contact: React.FC = () => {
     Desenvolvido por Elias Ribeiro
   </Typography>
 </Box>
-
 
 
 

@@ -22,3 +22,15 @@ html, body {
 #root {
   height: 100%;
 }
+
+/* Tamanho da imagem para telas grandes */
+.logo {
+  width: 60px;
+}
+
+/* Para telas menores que 600px (smartphones) */
+@media (max-width: 600px) {
+  .logo {
+    width: 40px;  /* Reduz a largura para telas pequenas */
+  }
+}
